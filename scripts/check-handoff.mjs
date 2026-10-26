@@ -1,0 +1,2 @@
+import fs from 'node:fs';
+const baseline=JSON.parse(fs.readFileSync('BASELINE.json','utf8'));for(const f of baseline.files)if(!fs.existsSync(f.path))throw Error('Missing '+f.path);for(const item of JSON.parse(fs.readFileSync('DEPENDENCIES.json','utf8')).relativeImports)if(!fs.existsSync(item.to)&&!/\.(jpg|png|gif|webp)$/.test(item.to))throw Error('Missing dependency '+item.to);console.log('Task source and relative dependency inventory verified.');

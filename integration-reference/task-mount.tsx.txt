@@ -1,0 +1,6 @@
+// src/App.tsx:2
+import {TaskRequiredFormsProvider} from './components/TaskRequiredForms';
+// src/App.tsx:12
+import {TaskManagementSample} from './components/TaskManagementSample';
+// src/App.tsx:2222
+              {activeTab === 'TASK_MANAGEMENT' && currentUser && canViewTab(groupPrivileges,currentUser,'TASK_MANAGEMENT') && <TaskRequiredFormsProvider currentUser={currentUser} groupPrivileges={groupPrivileges} drones={drones} users={users} batteries={batteries} accessories={accessories} streamingDevices={streamingDevices} handoverForms={handoverForms} checkouts={checkouts} incidentReports={incidentReports} confiscatedDrones={confiscatedDrones}><TaskManagementSample groups={userGroups} users={users} currentUser={currentUser} groupPrivileges={groupPrivileges} onRequest={id=>setTaskRequestPreview(id)} onHandover={handleNavigateToHandover}/></TaskRequiredFormsProvider>}

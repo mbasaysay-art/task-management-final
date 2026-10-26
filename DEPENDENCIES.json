@@ -1,0 +1,1405 @@
+{
+  "relativeImports": [
+    {
+      "from": "server/task-automation.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "server/task-automation.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "server/task-automation.mjs",
+      "to": "shared/taskAutomation.mjs"
+    },
+    {
+      "from": "shared/personalTasks.d.mts",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "shared/taskAttachmentPreview.d.mts",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "shared/taskDashboard.mjs",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "shared/taskDiscussion.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "shared/taskDiscussion.mjs",
+      "to": "shared/workspaceSnapshot.mjs"
+    },
+    {
+      "from": "shared/taskReferenceBoard.mjs",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "shared/taskRelatedDocuments.mjs",
+      "to": "shared/taskRequiredForms.mjs"
+    },
+    {
+      "from": "shared/taskWorkspaceUi.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "shared/taskWorkspaceUi.mjs",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "shared/workspaceLiveSync.d.mts",
+      "to": "src/features/taskOrbit/serverStorage.ts"
+    },
+    {
+      "from": "shared/workspaceLiveSync.mjs",
+      "to": "shared/workspaceSnapshot.mjs"
+    },
+    {
+      "from": "src/components/TaskAutomationPanel.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/TaskAutomationPanel.tsx",
+      "to": "shared/taskAutomation.mjs"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "shared/taskRequiredForms.mjs"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/components/HandoverFormCreator.tsx"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/components/IncidentReportView.tsx"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/components/ConfiscatedDroneFormModal.tsx"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/utils/incidentProfile.mjs"
+    },
+    {
+      "from": "src/components/TaskRequiredForms.tsx",
+      "to": "src/utils/reportSequence.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "src/utils/useTabletUi.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "src/features/taskOrbit/components/board/reference-task-board.css"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/MyTasksView.tsx",
+      "to": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/ProjectsView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/ProjectsView.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/ProjectsView.tsx",
+      "to": "shared/taskProjects.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/ProjectsView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx",
+      "to": "shared/taskAttachmentPreview.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/components/FormPdfButton.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/features/taskOrbit/serverStorage.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/components/IncidentReportOfficialSheet.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/components/HandoverFormCreator.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/components/ConfiscatedDroneOfficialSheet.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "tests/task-assignee-search.test.mjs",
+      "to": "shared/taskAssigneeSearch.mjs"
+    },
+    {
+      "from": "tests/task-assignment-notifications-api.test.mjs",
+      "to": "src/utils/pendingNotifications.mjs"
+    },
+    {
+      "from": "tests/task-assignment-notifications-api.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-attachment-preview.test.mjs",
+      "to": "shared/taskAttachmentPreview.mjs"
+    },
+    {
+      "from": "tests/task-attachment-preview.test.mjs",
+      "to": "shared/taskDiscussion.mjs"
+    },
+    {
+      "from": "tests/task-automation-api.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-automation.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-automation.test.mjs",
+      "to": "server/task-workspace-storage.mjs"
+    },
+    {
+      "from": "tests/task-automation.test.mjs",
+      "to": "server/task-automation.mjs"
+    },
+    {
+      "from": "tests/task-automation.test.mjs",
+      "to": "server/backup.mjs"
+    },
+    {
+      "from": "tests/task-automation.test.mjs",
+      "to": "shared/taskAutomation.mjs"
+    },
+    {
+      "from": "tests/task-completion-api.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-dashboard-accuracy.test.mjs",
+      "to": "shared/taskDashboard.mjs"
+    },
+    {
+      "from": "tests/task-dashboard-accuracy.test.mjs",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "tests/task-dashboard-accuracy.test.mjs",
+      "to": "src/features/taskOrbit/dashboardFilters.mjs"
+    },
+    {
+      "from": "tests/task-discussion.test.mjs",
+      "to": "shared/taskDiscussion.mjs"
+    },
+    {
+      "from": "tests/task-discussion.test.mjs",
+      "to": "shared/taskCompletion.mjs"
+    },
+    {
+      "from": "tests/task-notification-preview.test.mjs",
+      "to": "src/utils/pendingNotifications.mjs"
+    },
+    {
+      "from": "tests/task-notification-preview.test.mjs",
+      "to": "src/utils/pendingNotifications.mjs"
+    },
+    {
+      "from": "tests/task-reference-board.test.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "tests/task-reference-board.test.mjs",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "tests/task-reference-board.test.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "tests/task-reference-board.test.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "tests/task-related-documents-api.test.mjs",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "tests/task-related-documents-api.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-related-documents.test.mjs",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "tests/task-required-forms-api.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-workspace-simple.test.mjs",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "tests/task-workspace-simple.test.mjs",
+      "to": "scripts/validate-feature-registry.mjs"
+    },
+    {
+      "from": "tests/task-workspace-simple.test.mjs",
+      "to": "shared/featureRegistry.ts"
+    },
+    {
+      "from": "server/request-tasks.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "server/request-tasks.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "server/request-tasks.mjs",
+      "to": "server/drone-requests.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskGroupWork.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskProjects.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskRequiredForms.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/workspaceSnapshot.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskDiscussion.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskCompletion.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "server/shared-task-workspace.mjs",
+      "to": "shared/calendarDateRange.mjs"
+    },
+    {
+      "from": "server/task-workspace-directory.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "server/task-workspace-storage.mjs",
+      "to": "server/shared-task-workspace.mjs"
+    },
+    {
+      "from": "server/task-workspace-storage.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "server/task-workspace-storage.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "src/components/AutomaticRequestTasks.tsx",
+      "to": "src/components/TaskDetailsModal.tsx"
+    },
+    {
+      "from": "src/components/AutomaticRequestTasks.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/AutomaticRequestTasks.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/AutomaticRequestTasks.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/AutomaticRequestTasks.tsx",
+      "to": "src/components/TaskCalendar.tsx"
+    },
+    {
+      "from": "src/components/TaskCalendar.tsx",
+      "to": "src/components/TaskDetailsModal.tsx"
+    },
+    {
+      "from": "src/components/TaskDetailsModal.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/TaskDroneRequestPreview.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/utils/useTabletUi.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/components/TabletLayout.tsx"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/features/taskOrbit/navigation.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/components/PageNavigation.tsx"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/TaskManagementSample.tsx",
+      "to": "src/features/taskOrbit/TaskWorkspace.tsx"
+    },
+    {
+      "from": "src/components/TaskManagementSettings.tsx",
+      "to": "src/features/taskOrbit/serverStorage.ts"
+    },
+    {
+      "from": "src/components/TaskProfileBoard.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "shared/workspaceLiveSync.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/overview/MyTasksView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/overview/ProjectsView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/components/TaskAutomationPanel.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "shared/workspaceSnapshot.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/serverStorage.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/navigation.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/layout/Header.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/board/KanbanBoard.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/list/ListView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/overview/OverviewView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/timeline/TimelineView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/calendar/CalendarView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/files/FilesView.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskDetailModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/modals/NewTaskModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/modals/NewBoardModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/modals/ShortcutsModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/modals/NewEventModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/modals/DefineGroupModal.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/activity/ActivityFeedDrawer.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "to": "src/features/taskOrbit/components/common/Toast.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/activity/ActivityFeedDrawer.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/activity/ActivityFeedDrawer.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/analytics/AnalyticsView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/analytics/AnalyticsView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanBoard.tsx",
+      "to": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanBoard.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanBoard.tsx",
+      "to": "src/features/taskOrbit/components/board/KanbanColumn.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanColumn.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanColumn.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanColumn.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/KanbanColumn.tsx",
+      "to": "src/features/taskOrbit/components/board/TaskCard.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/TaskCard.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/TaskCard.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/TaskCard.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/board/TaskCard.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/calendar/CalendarView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/calendar/CalendarView.tsx",
+      "to": "shared/calendarDateRange.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/calendar/CalendarView.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/common/Avatar.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/common/Toast.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "shared/taskDashboard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "src/features/taskOrbit/dashboardFilters.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "src/features/taskOrbit/components/dashboard/DonutChart.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/files/FilesView.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/files/FilesView.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/files/FilesView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/layout/Header.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/layout/Header.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/layout/Sidebar.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/list/ListView.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/list/ListView.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/list/ListView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/list/ListView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/list/ListView.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/DefineGroupModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewBoardModal.tsx",
+      "to": "shared/taskProjects.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewBoardModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewEventModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewEventModal.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "shared/taskAssigneeSearch.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "shared/taskRequiredForms.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/ShortcutsModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/TeamMembersModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/modals/TeamMembersModal.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/notes/TeamNotesView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/notes/TeamNotesView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/notes/TeamNotesView.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/overview/OverviewView.tsx",
+      "to": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/taskGroupWork.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/components/TaskRequiredForms.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/taskAttachmentPreview.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/taskCompletion.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/components/task/TaskAttachments.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/timeline/TimelineView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/timeline/TimelineView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/components/timeline/TimelineView.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/workload/WorkloadView.tsx",
+      "to": "src/features/taskOrbit/context/TaskOrbitContext.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/workload/WorkloadView.tsx",
+      "to": "src/features/taskOrbit/components/common/Avatar.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/components/workload/WorkloadView.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/taskDashboard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/utils/searchText.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/taskCompletion.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/workspaceSnapshot.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/personalTasks.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/serverStorage.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/attachmentStorage.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "to": "src/features/taskOrbit/data/initialData.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/dashboardFilters.mjs",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/dashboardFilters.mjs",
+      "to": "shared/taskDashboard.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/dashboardFilters.mjs",
+      "to": "src/utils/searchText.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/data/initialData.ts",
+      "to": "src/features/taskOrbit/assets/images/avatar_david_kim_1792035307936.jpg"
+    },
+    {
+      "from": "src/features/taskOrbit/data/initialData.ts",
+      "to": "src/features/taskOrbit/assets/images/avatar_elena_rostova_1792035307709.jpg"
+    },
+    {
+      "from": "src/features/taskOrbit/data/initialData.ts",
+      "to": "src/features/taskOrbit/assets/images/avatar_marcus_vance_1792035307240.jpg"
+    },
+    {
+      "from": "src/features/taskOrbit/data/initialData.ts",
+      "to": "src/features/taskOrbit/assets/images/avatar_sarah_chen_1792035307567.jpg"
+    },
+    {
+      "from": "src/features/taskOrbit/data/initialData.ts",
+      "to": "src/features/taskOrbit/types/task.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/navigation.ts",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "src/features/taskOrbit/navigation.ts",
+      "to": "src/components/PageNavigation.tsx"
+    },
+    {
+      "from": "src/features/taskOrbit/serverStorage.ts",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/serverStorage.ts",
+      "to": "src/features/taskOrbit/attachmentStorage.ts"
+    },
+    {
+      "from": "src/features/taskOrbit/types/task.ts",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "tests/request-tasks.test.mjs",
+      "to": "server/request-tasks.mjs"
+    },
+    {
+      "from": "tests/shared-task-workspace.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/shared-task-workspace.test.mjs",
+      "to": "server/backup.mjs"
+    },
+    {
+      "from": "tests/shared-task-workspace.test.mjs",
+      "to": "server/task-workspace-storage.mjs"
+    },
+    {
+      "from": "tests/shared-task-workspace.test.mjs",
+      "to": "shared/taskReferenceBoard.mjs"
+    },
+    {
+      "from": "tests/shared-task-workspace.test.mjs",
+      "to": "shared/taskProjects.mjs"
+    },
+    {
+      "from": "tests/task-workspace-dashboard.test.mjs",
+      "to": "src/features/taskOrbit/dashboardFilters.mjs"
+    },
+    {
+      "from": "tests/task-workspace-directory.test.mjs",
+      "to": "server/task-workspace-directory.mjs"
+    },
+    {
+      "from": "tests/task-workspace-samples.test.mjs",
+      "to": "server/task-workspace-samples.mjs"
+    },
+    {
+      "from": "tests/task-workspace-storage.test.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "tests/task-workspace-storage.test.mjs",
+      "to": "server/backup.mjs"
+    },
+    {
+      "from": "tests/task-workspace-storage.test.mjs",
+      "to": "server/task-workspace-storage.mjs"
+    },
+    {
+      "from": "server/database.mjs",
+      "to": "server/asset-emails.mjs"
+    },
+    {
+      "from": "server/database.mjs",
+      "to": "src/utils/accountIdentity.mjs"
+    },
+    {
+      "from": "server/access.mjs",
+      "to": "shared/featureRegistry.ts"
+    },
+    {
+      "from": "server/access.mjs",
+      "to": "src/utils/accountIdentity.mjs"
+    },
+    {
+      "from": "server/access.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "src/utils/realtimeSync.ts",
+      "to": "src/utils/recordSync.mjs"
+    },
+    {
+      "from": "src/utils/realtimeSync.ts",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/types/drone.ts",
+      "to": "shared/featureRegistry.ts"
+    },
+    {
+      "from": "src/types/drone.ts",
+      "to": "src/utils/accountIdentity.mjs"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/components/OfficialFormHeader.tsx"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/components/OfficialFormFooter.tsx"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/components/FormPdfButton.tsx"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/recordId.mjs"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/requestPreparation.mjs"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/realtimeSync.ts"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/reportSequence.mjs"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/handoverRows.mjs"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/data/initialHandoverData.ts"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/utils/handoverUtils.ts"
+    },
+    {
+      "from": "src/components/HandoverFormCreator.tsx",
+      "to": "src/components/BarcodeScannerModal.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/FormPdfButton.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/IncidentReportOfficialSheet.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/IncidentHandoverReference.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/incident-report-profile.css"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/utils/incidentProfile.mjs"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/utils/searchText.mjs"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/OfficialFormFooter.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/OfficialFormHeader.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/PageNavigation.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/utils/reportSequence.mjs"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/CameraCaptureModal.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/components/BarcodeScannerModal.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportView.tsx",
+      "to": "src/utils/incidentEntries.mjs"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/utils/reportSequence.mjs"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/components/BarcodeScannerModal.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/components/CameraCaptureModal.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneFormModal.tsx",
+      "to": "src/data/initialConfiscatedDroneData.ts"
+    },
+    {
+      "from": "src/components/FormPdfButton.tsx",
+      "to": "src/utils/formPdf.ts"
+    },
+    {
+      "from": "src/components/IncidentReportOfficialSheet.tsx",
+      "to": "src/components/OfficialFormHeader.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportOfficialSheet.tsx",
+      "to": "src/components/OfficialFormFooter.tsx"
+    },
+    {
+      "from": "src/components/IncidentReportOfficialSheet.tsx",
+      "to": "src/utils/incidentEntries.mjs"
+    },
+    {
+      "from": "src/components/IncidentReportOfficialSheet.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneOfficialSheet.tsx",
+      "to": "src/components/FormPdfButton.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneOfficialSheet.tsx",
+      "to": "src/components/OfficialFormFooter.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneOfficialSheet.tsx",
+      "to": "src/components/OfficialFormHeader.tsx"
+    },
+    {
+      "from": "src/components/ConfiscatedDroneOfficialSheet.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "server/backup.mjs",
+      "to": "server/configuration-backups.mjs"
+    },
+    {
+      "from": "server/backup.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "scripts/validate-feature-registry.mjs",
+      "to": "shared/featureRegistry.ts"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskGroupWork.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskAssigneeSearch.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskProjects.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/formPdf.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/integrations.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/operationalIncidents.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskRelatedDocuments.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskRequiredForms.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskDiscussion.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskCompletion.mjs"
+    },
+    {
+      "from": "shared/featureRegistry.ts",
+      "to": "shared/taskWorkspaceUi.mjs"
+    },
+    {
+      "from": "server/drone-requests.mjs",
+      "to": "src/utils/requestPreparation.mjs"
+    },
+    {
+      "from": "server/drone-requests.mjs",
+      "to": "server/database.mjs"
+    },
+    {
+      "from": "server/drone-requests.mjs",
+      "to": "server/access.mjs"
+    },
+    {
+      "from": "src/components/PageNavigation.tsx",
+      "to": "shared/featureRegistry.ts"
+    },
+    {
+      "from": "src/components/PageNavigation.tsx",
+      "to": "shared/windowNavigation.mjs"
+    },
+    {
+      "from": "src/components/PageNavigation.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/data/initialHandoverData.ts",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/utils/handoverUtils.ts",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/IncidentHandoverReference.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/components/CameraCaptureModal.tsx",
+      "to": "src/components/AppDropdown.tsx"
+    },
+    {
+      "from": "src/components/CameraCaptureModal.tsx",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/data/initialConfiscatedDroneData.ts",
+      "to": "src/types/drone.ts"
+    },
+    {
+      "from": "src/utils/formPdf.ts",
+      "to": "src/utils/formPdfFilename.mjs"
+    },
+    {
+      "from": "shared/operationalIncidents.mjs",
+      "to": "shared/fireSimulation.mjs"
+    }
+  ],
+  "externalPackages": [
+    "bcryptjs",
+    "html5-qrcode",
+    "lucide-react",
+    "node:child_process",
+    "node:crypto",
+    "node:events",
+    "node:fs",
+    "node:net",
+    "node:os",
+    "node:path",
+    "node:sqlite",
+    "node:test",
+    "node:url",
+    "node:worker_threads",
+    "node:zlib",
+    "react",
+    "react-dom",
+    "ws"
+  ],
+  "unresolved": []
+}

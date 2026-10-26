@@ -1,0 +1,24 @@
+// server.ts:8
+import {createTaskAutomation,registerTaskAutomationRoutes} from './server/task-automation.mjs';
+// server.ts:9
+import {createTaskWorkspaceStorage} from './server/task-workspace-storage.mjs';
+// server.ts:10
+import {taskWorkspaceDirectory} from './server/task-workspace-directory.mjs';
+// server.ts:18
+import {initializeRequestTasks,syncRequestTasks,requestTasks,canViewRequestTask,changeRequestTask,authorizeTaskPreparation} from './server/request-tasks.mjs';
+// server.ts:185
+initializeRequestTasks(store);
+// server.ts:195
+store.transaction(()=>syncRequestTasks(store,store.load(),null));
+// server.ts:1192
+    syncRequestTasks(store,store.load(),actor);
+// server.ts:1209
+    syncRequestTasks(store,store.load(),actor);
+// server.ts:1251
+  syncRequestTasks(store,store.load(),actor);
+// server.ts:2248
+  const runTaskAutomation=()=>{try{if(taskAutomation.tick().changed)refreshTaskAutomation();}catch(error){console.error('[Task automation]',(error as Error).message);}};
+// server.ts:2249
+  runTaskAutomation();const taskAutomationTimer=setInterval(runTaskAutomation,30000);taskAutomationTimer.unref();
+// server.ts:2250
+  const flightRequestTimer=setInterval(()=>{try{deliverFlights();}catch(error){console.error('[Flight Request] Delivery failed:',(error as Error).message);}},30000);flightRequestTimer.unref();  const stop = () => { clearInterval(taskAutomationTimer);clearInterval(flightRequestTimer);backups.stop(); server.close(() => { store.close(); process.exit(0); }); for (const ws of wss.clients) ws.close(); setTimeout(()=>process.exit(0),5000).unref(); };

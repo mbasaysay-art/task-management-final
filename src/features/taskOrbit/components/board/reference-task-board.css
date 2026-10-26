@@ -1,0 +1,54 @@
+/* Keep this reference layout independent of the host's uppercase table headings. */
+:root .app-page-content .task-orbit-workspace .task-reference-board.task-reference-board :is(h2,h3) {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+}
+:root .app-page-content .task-orbit-workspace .task-reference-board.task-reference-board h3 {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+.task-reference-board .task-reference-add {
+  background: #5b50f5 !important;
+  color: #fff !important;
+}
+.task-reference-board .task-reference-add:hover { background: #4f46db !important; }
+.task-reference-board .task-reference-progress { background: #6258ed !important; }
+.task-reference-board summary::-webkit-details-marker { display: none; }
+
+/* Explicit local surfaces avoid the host application's remapped slate palette. */
+:root .app-page-content .task-orbit-workspace .task-reference-board {
+  --ref-bg: #fff;
+  --ref-panel: #f7f8fa;
+  --ref-card: #fff;
+  --ref-border: #eaecf0;
+  --ref-text: #292b32;
+  --ref-muted: #7d8594;
+  --ref-tag: #f5f6f7;
+  --ref-track: #eceef3;
+  background: var(--ref-bg) !important;
+  color: var(--ref-text) !important;
+}
+:root:not([data-display-mode="light"]) .app-page-content .task-orbit-workspace .task-reference-board {
+  --ref-bg: #121416;
+  --ref-panel: #181b20;
+  --ref-card: #20242b;
+  --ref-border: #30353f;
+  --ref-text: #e9eaf0;
+  --ref-muted: #9aA1ae;
+  --ref-tag: #292e37;
+  --ref-track: #353b46;
+}
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(h1,h2,h3,td) { color: var(--ref-text) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(.task-reference-card,.task-reference-lane-header,.task-reference-control,.task-reference-column-add,.task-reference-field,.task-reference-search,.task-reference-popup) {
+  background: var(--ref-card) !important;
+  border-color: var(--ref-border) !important;
+  color: var(--ref-text) !important;
+}
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(.task-reference-heading,.task-reference-toolbar,.task-reference-footer) { border-color: var(--ref-border) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(.task-reference-lane,.task-reference-switch,.task-reference-table-head) { background: var(--ref-panel) !important; border-color: var(--ref-border) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(.task-reference-tag,.task-reference-count) { background: var(--ref-tag) !important; color: var(--ref-muted) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board :is(.task-reference-date,.task-reference-progress-label,.task-reference-counter,.task-reference-updated) { color: var(--ref-muted) !important; border-color: var(--ref-border) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board .task-reference-track { background: var(--ref-track) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board .task-reference-switch-button { background: var(--ref-panel) !important; color: var(--ref-muted) !important; }
+:root .app-page-content .task-orbit-workspace .task-reference-board .task-reference-switch-button[aria-pressed="true"] { background: var(--ref-card) !important; color: var(--ref-text) !important; }

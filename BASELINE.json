@@ -1,0 +1,1039 @@
+{
+  "sourceRepository": "perdonyan/VERSION-5-COLLAB",
+  "sourceHead": "f0772c03b08a8635222a3736e89e6a74b82bc2d5",
+  "workingTreeIncluded": true,
+  "createdAt": "2026-10-26T19:15:44.451Z",
+  "destination": "mbasaysay-art/task-management-final",
+  "visibility": "public; explicitly authorized by user",
+  "files": [
+    {
+      "path": "scripts/validate-feature-registry.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "7abda328d2d10be11777fe21f540fb74e8c593dff172ec924ef679d1464d8121",
+      "handoffSha256": "7abda328d2d10be11777fe21f540fb74e8c593dff172ec924ef679d1464d8121",
+      "sanitized": false
+    },
+    {
+      "path": "server/access.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "9cf1e89c86643441b5c46f681488c353fe541d3430534d3eb39808f5e2427f16",
+      "handoffSha256": "9cf1e89c86643441b5c46f681488c353fe541d3430534d3eb39808f5e2427f16",
+      "sanitized": false
+    },
+    {
+      "path": "server/asset-emails.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "677cb6eb023f51592c75ab20fbe7f040af38d4bb370255159284cf0975525052",
+      "handoffSha256": "677cb6eb023f51592c75ab20fbe7f040af38d4bb370255159284cf0975525052",
+      "sanitized": false
+    },
+    {
+      "path": "server/backup.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "69710c82f0cc2b146024eab004057e08f471393d6b0f880ede89d5c6398c8f05",
+      "handoffSha256": "69710c82f0cc2b146024eab004057e08f471393d6b0f880ede89d5c6398c8f05",
+      "sanitized": false
+    },
+    {
+      "path": "server/configuration-backups.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "c019c094bc11fbf7ce3e06722af416e13da1cc7a3c0e47fde303173d248b0d6a",
+      "handoffSha256": "c019c094bc11fbf7ce3e06722af416e13da1cc7a3c0e47fde303173d248b0d6a",
+      "sanitized": false
+    },
+    {
+      "path": "server/database.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "334c345ef76ce706be2362381fb4dc5335dbd3588bc47d56f9381b4643b20018",
+      "handoffSha256": "334c345ef76ce706be2362381fb4dc5335dbd3588bc47d56f9381b4643b20018",
+      "sanitized": false
+    },
+    {
+      "path": "server/drone-requests.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "41de4845218d88cf430feef43f0a967d1a5540cb6f36175a24c5385383ac7723",
+      "handoffSha256": "41de4845218d88cf430feef43f0a967d1a5540cb6f36175a24c5385383ac7723",
+      "sanitized": false
+    },
+    {
+      "path": "server/request-tasks.mjs",
+      "classification": "task-module",
+      "sourceSha256": "5177cbd18e20ce56d0198f4779036136e76d993301230c1b509e4876eb873be1",
+      "handoffSha256": "5177cbd18e20ce56d0198f4779036136e76d993301230c1b509e4876eb873be1",
+      "sanitized": false
+    },
+    {
+      "path": "server/shared-task-workspace.mjs",
+      "classification": "task-module",
+      "sourceSha256": "9f16ee20ef77a6290418c98cd73b119efb79d28666a251ed6efbb5dc6a54d44d",
+      "handoffSha256": "9f16ee20ef77a6290418c98cd73b119efb79d28666a251ed6efbb5dc6a54d44d",
+      "sanitized": false
+    },
+    {
+      "path": "server/task-automation.mjs",
+      "classification": "task-module",
+      "sourceSha256": "8d818c8ffa38ef250d0254546a7fa380674f85b27e4dd403e9a21a6c5bfe6431",
+      "handoffSha256": "8d818c8ffa38ef250d0254546a7fa380674f85b27e4dd403e9a21a6c5bfe6431",
+      "sanitized": false
+    },
+    {
+      "path": "server/task-workspace-directory.mjs",
+      "classification": "task-module",
+      "sourceSha256": "8f34c8cad94adbc558de82aaddbcef47170a5099c927052dadbf9224c607924b",
+      "handoffSha256": "8f34c8cad94adbc558de82aaddbcef47170a5099c927052dadbf9224c607924b",
+      "sanitized": false
+    },
+    {
+      "path": "server/task-workspace-samples.mjs",
+      "classification": "task-module",
+      "sourceSha256": "a93d7f35fc875ea7012acc514f41606844e5a360450b20c21e2f7ed3c4562897",
+      "handoffSha256": "a93d7f35fc875ea7012acc514f41606844e5a360450b20c21e2f7ed3c4562897",
+      "sanitized": false
+    },
+    {
+      "path": "server/task-workspace-storage.mjs",
+      "classification": "task-module",
+      "sourceSha256": "27a9a51e5df432a8b589e342e2f7c3494b80c331071c8d2aa7b731e711635c87",
+      "handoffSha256": "27a9a51e5df432a8b589e342e2f7c3494b80c331071c8d2aa7b731e711635c87",
+      "sanitized": false
+    },
+    {
+      "path": "shared/calendarDateRange.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "088ec40a8d4bfa6fc3149f6a57587451969221982e04f06d7182eeb3cc77768b",
+      "handoffSha256": "088ec40a8d4bfa6fc3149f6a57587451969221982e04f06d7182eeb3cc77768b",
+      "sanitized": false
+    },
+    {
+      "path": "shared/featureRegistry.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "aa2e9b8ac3818b90658014d10d1ddf4d72f1a62a473c0d7bd173c904c3a857d8",
+      "handoffSha256": "aa2e9b8ac3818b90658014d10d1ddf4d72f1a62a473c0d7bd173c904c3a857d8",
+      "sanitized": false
+    },
+    {
+      "path": "shared/fireSimulation.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "cbff826a244664d0f2df1ee2b4d5d373d4b4e2c2f10a728e9e4b6261684af036",
+      "handoffSha256": "cbff826a244664d0f2df1ee2b4d5d373d4b4e2c2f10a728e9e4b6261684af036",
+      "sanitized": false
+    },
+    {
+      "path": "shared/formPdf.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "bbc40ddd2dfc130420b8f2c016b03a0963592ab9ce1aec7198aac02556b7fadf",
+      "handoffSha256": "bbc40ddd2dfc130420b8f2c016b03a0963592ab9ce1aec7198aac02556b7fadf",
+      "sanitized": false
+    },
+    {
+      "path": "shared/integrations.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "611099323310d31191b8bc4bc0400eb3fdd1dffc4541554df260195b305af482",
+      "handoffSha256": "611099323310d31191b8bc4bc0400eb3fdd1dffc4541554df260195b305af482",
+      "sanitized": false
+    },
+    {
+      "path": "shared/operationalIncidents.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "6f7f8212634c69cfb35fc0ad542778e5638e5316d2e31cd473ac5f94858fc9d7",
+      "handoffSha256": "6f7f8212634c69cfb35fc0ad542778e5638e5316d2e31cd473ac5f94858fc9d7",
+      "sanitized": false
+    },
+    {
+      "path": "shared/personalTasks.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "3a2d8473ff06c9669ca83a4793c08d7d170ccb24afc1fbcbf8599c13ced02828",
+      "handoffSha256": "3a2d8473ff06c9669ca83a4793c08d7d170ccb24afc1fbcbf8599c13ced02828",
+      "sanitized": false
+    },
+    {
+      "path": "shared/personalTasks.mjs",
+      "classification": "task-module",
+      "sourceSha256": "964200b5e9de6cdafb283c63285b6cb004aacd133b3f8b67c5c35cec0b9bc916",
+      "handoffSha256": "964200b5e9de6cdafb283c63285b6cb004aacd133b3f8b67c5c35cec0b9bc916",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskAssigneeSearch.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "e7d7202b34fab55f0851f1445bf7b53c5a210bc5f98c247309bf2b85194c8218",
+      "handoffSha256": "e7d7202b34fab55f0851f1445bf7b53c5a210bc5f98c247309bf2b85194c8218",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskAssigneeSearch.mjs",
+      "classification": "task-module",
+      "sourceSha256": "d37a5a2d971295c2e7905e033552ce26887231c1242d20983d67190ab1172e52",
+      "handoffSha256": "d37a5a2d971295c2e7905e033552ce26887231c1242d20983d67190ab1172e52",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskAttachmentPreview.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "51694d18efc6ea5a1eb1e5c712d04ad33224eaa9250988dd1e25d1d3c5360330",
+      "handoffSha256": "51694d18efc6ea5a1eb1e5c712d04ad33224eaa9250988dd1e25d1d3c5360330",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskAttachmentPreview.mjs",
+      "classification": "task-module",
+      "sourceSha256": "ac0552ad79d14e7a2dee7825b1e722e7aba5da34a39768c3220221dff2cd8d9d",
+      "handoffSha256": "ac0552ad79d14e7a2dee7825b1e722e7aba5da34a39768c3220221dff2cd8d9d",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskAutomation.mjs",
+      "classification": "task-module",
+      "sourceSha256": "d984842d406b13fe9546a8080804bb7df992effaf8130721d60e3cb38cfdb752",
+      "handoffSha256": "d984842d406b13fe9546a8080804bb7df992effaf8130721d60e3cb38cfdb752",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskCompletion.mjs",
+      "classification": "task-module",
+      "sourceSha256": "dacfbb28d31a89949ebb67446a3e8c260909095b95848c6c79ea6b042500bfbc",
+      "handoffSha256": "dacfbb28d31a89949ebb67446a3e8c260909095b95848c6c79ea6b042500bfbc",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskDashboard.mjs",
+      "classification": "task-module",
+      "sourceSha256": "469a8f2b1a3dbc12044c4bdb24f78f4ad913648f930770bfe8aa33571684d54d",
+      "handoffSha256": "469a8f2b1a3dbc12044c4bdb24f78f4ad913648f930770bfe8aa33571684d54d",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskDiscussion.mjs",
+      "classification": "task-module",
+      "sourceSha256": "1ecb829e89fb6fe48a246f0cbf93feb24c2a539c68937e09da64b05c2793d4dd",
+      "handoffSha256": "1ecb829e89fb6fe48a246f0cbf93feb24c2a539c68937e09da64b05c2793d4dd",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskGroupWork.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "c2f5c1bbf5d46fd95895c35d28cd6c3150d4c0c65d3511e865e539cd2bf46d7a",
+      "handoffSha256": "c2f5c1bbf5d46fd95895c35d28cd6c3150d4c0c65d3511e865e539cd2bf46d7a",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskGroupWork.mjs",
+      "classification": "task-module",
+      "sourceSha256": "dc6465beb964b71cca2e91c167a6b4612e39e74538b6502b4ab38ba17c79678f",
+      "handoffSha256": "dc6465beb964b71cca2e91c167a6b4612e39e74538b6502b4ab38ba17c79678f",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskProjects.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "6d9bf3a82b4b26f0684891417976181c05b81945438ed4c8ec27cad34cf3eae5",
+      "handoffSha256": "6d9bf3a82b4b26f0684891417976181c05b81945438ed4c8ec27cad34cf3eae5",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskProjects.mjs",
+      "classification": "task-module",
+      "sourceSha256": "55bfcee2cced3a62adcaf5f39671033a412a280875de7a10903a2abe8aaaebbd",
+      "handoffSha256": "55bfcee2cced3a62adcaf5f39671033a412a280875de7a10903a2abe8aaaebbd",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskReferenceBoard.mjs",
+      "classification": "task-module",
+      "sourceSha256": "e961872b306a1fe32668b7fc29bd131d90abcaf300e5f3a88da9c8013972aa6c",
+      "handoffSha256": "e961872b306a1fe32668b7fc29bd131d90abcaf300e5f3a88da9c8013972aa6c",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskRelatedDocuments.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "ff05ddfa95522fa0e94242e4a991c9b7dd126f7b23922014251468a023526923",
+      "handoffSha256": "ff05ddfa95522fa0e94242e4a991c9b7dd126f7b23922014251468a023526923",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskRelatedDocuments.mjs",
+      "classification": "task-module",
+      "sourceSha256": "421caebede8203da695c9f02f9f2cea776ba3ab7971923efdc1dcf6f82439b97",
+      "handoffSha256": "421caebede8203da695c9f02f9f2cea776ba3ab7971923efdc1dcf6f82439b97",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskRequiredForms.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "e93e23a19721fcb97c51aa5ba4d7876fb135eaee16fe302e33f8c402281ff379",
+      "handoffSha256": "e93e23a19721fcb97c51aa5ba4d7876fb135eaee16fe302e33f8c402281ff379",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskRequiredForms.mjs",
+      "classification": "task-module",
+      "sourceSha256": "c0c7f1eed572d27606516bc8d0d7c3abf705053429d498fa555aca22653a3a45",
+      "handoffSha256": "c0c7f1eed572d27606516bc8d0d7c3abf705053429d498fa555aca22653a3a45",
+      "sanitized": false
+    },
+    {
+      "path": "shared/taskWorkspaceUi.mjs",
+      "classification": "task-module",
+      "sourceSha256": "ffeadd346fa193fdf2b3e75213580e7e546617e9e08692bc76d3e2665829ca70",
+      "handoffSha256": "ffeadd346fa193fdf2b3e75213580e7e546617e9e08692bc76d3e2665829ca70",
+      "sanitized": false
+    },
+    {
+      "path": "shared/windowNavigation.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "0eee4822a8ec997a73928cf9aacc553bf80545549bc925cfdc6cdced7929c066",
+      "handoffSha256": "0eee4822a8ec997a73928cf9aacc553bf80545549bc925cfdc6cdced7929c066",
+      "sanitized": false
+    },
+    {
+      "path": "shared/workspaceLiveSync.d.mts",
+      "classification": "task-module",
+      "sourceSha256": "84c94ac448349351e1b526b57e4a5534aa9c5bd15af2b831d269013c304d3fa6",
+      "handoffSha256": "84c94ac448349351e1b526b57e4a5534aa9c5bd15af2b831d269013c304d3fa6",
+      "sanitized": false
+    },
+    {
+      "path": "shared/workspaceLiveSync.mjs",
+      "classification": "task-module",
+      "sourceSha256": "087125f1a35f72a892a21ed295ea67d404b35315df9a8ae539b3a0fa3ca20603",
+      "handoffSha256": "087125f1a35f72a892a21ed295ea67d404b35315df9a8ae539b3a0fa3ca20603",
+      "sanitized": false
+    },
+    {
+      "path": "shared/workspaceSnapshot.mjs",
+      "classification": "task-module",
+      "sourceSha256": "105a006e0752ed271314d0f886007a045c67122375f9ef23ac8db8c8b22eed22",
+      "handoffSha256": "105a006e0752ed271314d0f886007a045c67122375f9ef23ac8db8c8b22eed22",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/AppDropdown.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "523780b11570591f703613c6a199c75755b2d9310456870898a5e5b4a69d28eb",
+      "handoffSha256": "523780b11570591f703613c6a199c75755b2d9310456870898a5e5b4a69d28eb",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/AutomaticRequestTasks.tsx",
+      "classification": "task-module",
+      "sourceSha256": "743d20bb2a4e2b790342d0139399b86524fd6e24df5fa239917d424fa0010bd8",
+      "handoffSha256": "743d20bb2a4e2b790342d0139399b86524fd6e24df5fa239917d424fa0010bd8",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/BarcodeScannerModal.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "206d41cfe3e9b74456dfe0a1721b893fd3f23a11ebf4155c30914871201d02d0",
+      "handoffSha256": "206d41cfe3e9b74456dfe0a1721b893fd3f23a11ebf4155c30914871201d02d0",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/CameraCaptureModal.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "3f5427cb6edfa2d88794b3393705c2bad65f107e796275cc6f14209f18bd6e77",
+      "handoffSha256": "3f5427cb6edfa2d88794b3393705c2bad65f107e796275cc6f14209f18bd6e77",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/ConfiscatedDroneFormModal.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "a6717116ec3380882cb00dc34deef00ea239d8ecca4bdad6ebe7e9fda04e0a3a",
+      "handoffSha256": "a6717116ec3380882cb00dc34deef00ea239d8ecca4bdad6ebe7e9fda04e0a3a",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/ConfiscatedDroneOfficialSheet.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "9c5ab48681a5b74eea72a969aa834d9b9174228d8bb08446690d9810282c6976",
+      "handoffSha256": "9c5ab48681a5b74eea72a969aa834d9b9174228d8bb08446690d9810282c6976",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/FormPdfButton.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "47e0d3c139d23678109fe80dc31ea2d7bcb84970ed0863880be55989739ee127",
+      "handoffSha256": "47e0d3c139d23678109fe80dc31ea2d7bcb84970ed0863880be55989739ee127",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/HandoverFormCreator.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "e85c7371366e53ddc5cca587723d6ffaa257b44dd8b710fa2792ac2eca9e6834",
+      "handoffSha256": "e85c7371366e53ddc5cca587723d6ffaa257b44dd8b710fa2792ac2eca9e6834",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/IncidentHandoverReference.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "5f7f6cad5f258783846c87b9597f73cd128d19a74a0a73a45f75ab17fba41685",
+      "handoffSha256": "5f7f6cad5f258783846c87b9597f73cd128d19a74a0a73a45f75ab17fba41685",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/IncidentReportOfficialSheet.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "22a4709f5dd2ac9b94d662b93d3d396cf002d81db1b5cb2a669c353626b9ab29",
+      "handoffSha256": "22a4709f5dd2ac9b94d662b93d3d396cf002d81db1b5cb2a669c353626b9ab29",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/IncidentReportView.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "94debfe178121824732c5da226bdb5f19e53ec5ca931e7ec5065a7d65b7fd8d4",
+      "handoffSha256": "94debfe178121824732c5da226bdb5f19e53ec5ca931e7ec5065a7d65b7fd8d4",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/OfficialFormFooter.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "84f19d8cc07279492e7f0adc6d819ce7e9e9770c2b878d8d5f7096e39de91bb7",
+      "handoffSha256": "84f19d8cc07279492e7f0adc6d819ce7e9e9770c2b878d8d5f7096e39de91bb7",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/OfficialFormHeader.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "886fc579e3d4e81be2af5918d5858d17471bd7385d5926e0772c3fb6efbfa6f1",
+      "handoffSha256": "886fc579e3d4e81be2af5918d5858d17471bd7385d5926e0772c3fb6efbfa6f1",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/PageNavigation.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "33351e7367d2079a5bbc4c0b83ab193e7d37eb53e9396cc33b98cd364b29b319",
+      "handoffSha256": "33351e7367d2079a5bbc4c0b83ab193e7d37eb53e9396cc33b98cd364b29b319",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TabletLayout.tsx",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "86fe3ddb5c0a8d8faa0d39860762f4683dae433b5b6969bfd9163fa095ec046f",
+      "handoffSha256": "86fe3ddb5c0a8d8faa0d39860762f4683dae433b5b6969bfd9163fa095ec046f",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskAutomationPanel.tsx",
+      "classification": "task-module",
+      "sourceSha256": "1d07b98097c6f60af46e94628a908491faa4a2cec4f195bedc1bde05a668425c",
+      "handoffSha256": "1d07b98097c6f60af46e94628a908491faa4a2cec4f195bedc1bde05a668425c",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskCalendar.tsx",
+      "classification": "task-module",
+      "sourceSha256": "b3b2e46b6b6c3a64f28aaeb5df420b816480c3fd87633cac378de4d38c7d3a59",
+      "handoffSha256": "b3b2e46b6b6c3a64f28aaeb5df420b816480c3fd87633cac378de4d38c7d3a59",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskDetailsModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "2803e422a5b55f145a5d005d1e266c72798b11649a5ba5756df0b9daeab61255",
+      "handoffSha256": "2803e422a5b55f145a5d005d1e266c72798b11649a5ba5756df0b9daeab61255",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskDroneRequestPreview.tsx",
+      "classification": "task-module",
+      "sourceSha256": "4b77fad0adb1579fc212b03079506c8556693b2b90ff2ead8e0e6f59904cb10f",
+      "handoffSha256": "4b77fad0adb1579fc212b03079506c8556693b2b90ff2ead8e0e6f59904cb10f",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskManagementSample.tsx",
+      "classification": "task-module",
+      "sourceSha256": "8d70965c65d3062b4efa66e5d31568983ae92337e63b27385c645408038a00f1",
+      "handoffSha256": "8d70965c65d3062b4efa66e5d31568983ae92337e63b27385c645408038a00f1",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskManagementSettings.tsx",
+      "classification": "task-module",
+      "sourceSha256": "bce461930e8825978ed5919f3c1327f293b37b659705f7b0458b0bcf446a1409",
+      "handoffSha256": "bce461930e8825978ed5919f3c1327f293b37b659705f7b0458b0bcf446a1409",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskProfileBoard.tsx",
+      "classification": "task-module",
+      "sourceSha256": "8cc899554446680047fb5928b2d94e12a156109e35e783df874cc0778a22dcbf",
+      "handoffSha256": "8cc899554446680047fb5928b2d94e12a156109e35e783df874cc0778a22dcbf",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/TaskRequiredForms.tsx",
+      "classification": "task-module",
+      "sourceSha256": "bcf4f317b0f81f77290781186a7aee1a19be6fc07dc43da45a88e5bb2721cdda",
+      "handoffSha256": "bcf4f317b0f81f77290781186a7aee1a19be6fc07dc43da45a88e5bb2721cdda",
+      "sanitized": false
+    },
+    {
+      "path": "src/components/incident-report-profile.css",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "f49ca7c4f3217558a2019c5f92e9c00ec4f0a26555fe08e4887269ca8da2a4c7",
+      "handoffSha256": "f49ca7c4f3217558a2019c5f92e9c00ec4f0a26555fe08e4887269ca8da2a4c7",
+      "sanitized": false
+    },
+    {
+      "path": "src/data/initialConfiscatedDroneData.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "a0deae73d5508d58858c536e467177a6f0d998fe0b7c745f57fbc43127c89504",
+      "handoffSha256": "dd0fb62ccedcc021dbb6bde6ca91d3b954c826205552ac8adda8057f7f0ec9eb",
+      "sanitized": true
+    },
+    {
+      "path": "src/data/initialHandoverData.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "d73bc1c52ebe150fe7e5c2cd9606870c01ecb57f3c1469cc9744d7afa49a1152",
+      "handoffSha256": "1250ec6c32e2a2ef565d6fa762ca1df061c111b5e6718cdbde6eaf556439b494",
+      "sanitized": true
+    },
+    {
+      "path": "src/features/taskOrbit/TaskWorkspace.tsx",
+      "classification": "task-module",
+      "sourceSha256": "e78a7a853b608fd62ea7a7dde4db5f86f49f79df8919bb6aeae50d83f906a2b7",
+      "handoffSha256": "e78a7a853b608fd62ea7a7dde4db5f86f49f79df8919bb6aeae50d83f906a2b7",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/attachmentStorage.ts",
+      "classification": "task-module",
+      "sourceSha256": "3f4d1b8b8abfc7621861cbad3030bc42a5dcf0f7e4057abc7664eb4b9fc90aa6",
+      "handoffSha256": "3f4d1b8b8abfc7621861cbad3030bc42a5dcf0f7e4057abc7664eb4b9fc90aa6",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/activity/ActivityFeedDrawer.tsx",
+      "classification": "task-module",
+      "sourceSha256": "4009da3b7b520cc9c666b95d7f50937fd92f412d9a9aceda933f175f6729cd5a",
+      "handoffSha256": "4009da3b7b520cc9c666b95d7f50937fd92f412d9a9aceda933f175f6729cd5a",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/analytics/AnalyticsView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "2fcae82d54e731b5d30ff313691b37c50ed919e13841f77ff021a8794b5587c6",
+      "handoffSha256": "2fcae82d54e731b5d30ff313691b37c50ed919e13841f77ff021a8794b5587c6",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/board/KanbanBoard.tsx",
+      "classification": "task-module",
+      "sourceSha256": "2654073bbb777f93785fea4c4c38b7ae229bd8ec4826632e714af7d61b4a4191",
+      "handoffSha256": "2654073bbb777f93785fea4c4c38b7ae229bd8ec4826632e714af7d61b4a4191",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/board/KanbanColumn.tsx",
+      "classification": "task-module",
+      "sourceSha256": "3a8ea6258418703242253183cea663ce14d1662fd956c4f6aa95beaf7aaffadb",
+      "handoffSha256": "3a8ea6258418703242253183cea663ce14d1662fd956c4f6aa95beaf7aaffadb",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/board/ReferenceTaskBoard.tsx",
+      "classification": "task-module",
+      "sourceSha256": "eb7c2a3baa0bcfe99b9efdcbb3c594b60c1387ce99fb82b886a96269d25c1c5c",
+      "handoffSha256": "eb7c2a3baa0bcfe99b9efdcbb3c594b60c1387ce99fb82b886a96269d25c1c5c",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/board/TaskCard.tsx",
+      "classification": "task-module",
+      "sourceSha256": "60856e2c926d5bbbbe34e9221c92686e49dc078d30d31fd8ae86f552a51f1d3f",
+      "handoffSha256": "60856e2c926d5bbbbe34e9221c92686e49dc078d30d31fd8ae86f552a51f1d3f",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/board/reference-task-board.css",
+      "classification": "task-module",
+      "sourceSha256": "e0be5c036bcbb8e760985c8c8858b0f7b840cce51a4d20dec50287477c9754f2",
+      "handoffSha256": "e0be5c036bcbb8e760985c8c8858b0f7b840cce51a4d20dec50287477c9754f2",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/calendar/CalendarView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "8dbf51a0e5bbe853a78838ae5e1de5eff17f778c647774fc0ef6b7659c313423",
+      "handoffSha256": "8dbf51a0e5bbe853a78838ae5e1de5eff17f778c647774fc0ef6b7659c313423",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/common/Avatar.tsx",
+      "classification": "task-module",
+      "sourceSha256": "9b9387fabc84c6b3af0433f161a6fa589d572d3aba8662f43d7878be76546f2c",
+      "handoffSha256": "9b9387fabc84c6b3af0433f161a6fa589d572d3aba8662f43d7878be76546f2c",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/common/Toast.tsx",
+      "classification": "task-module",
+      "sourceSha256": "4df33c0807757d56dedc88ccf625be5cecd91943361b92b911c03ceba3d949f6",
+      "handoffSha256": "4df33c0807757d56dedc88ccf625be5cecd91943361b92b911c03ceba3d949f6",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/dashboard/DonutChart.tsx",
+      "classification": "task-module",
+      "sourceSha256": "63876477652d58994bc1fb980e45106e43d2d657b33bae4e4330d9c5e7b7faf8",
+      "handoffSha256": "63876477652d58994bc1fb980e45106e43d2d657b33bae4e4330d9c5e7b7faf8",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/dashboard/ExecutiveDashboard.tsx",
+      "classification": "task-module",
+      "sourceSha256": "90df2a03791e8c7630b722b77872e1edd97dc08ea3aeadd61dd10e2aa273bac3",
+      "handoffSha256": "90df2a03791e8c7630b722b77872e1edd97dc08ea3aeadd61dd10e2aa273bac3",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/files/FilesView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "7b0c33831696a8c32e04885f656748dcfb63393810ed577f928f3d66a1234f2d",
+      "handoffSha256": "7b0c33831696a8c32e04885f656748dcfb63393810ed577f928f3d66a1234f2d",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/layout/Header.tsx",
+      "classification": "task-module",
+      "sourceSha256": "be940b7f81b80521916058a0c3d23d44737e9b788150e194c15f51df6d0ed015",
+      "handoffSha256": "be940b7f81b80521916058a0c3d23d44737e9b788150e194c15f51df6d0ed015",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/layout/Sidebar.tsx",
+      "classification": "task-module",
+      "sourceSha256": "bf63f621c5d4627e8fe8161961e3983ef046c50482ce6901748cb64ffd82b8b8",
+      "handoffSha256": "bf63f621c5d4627e8fe8161961e3983ef046c50482ce6901748cb64ffd82b8b8",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/list/ListView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "d6c3704cf1104387f57c3c238d5982b36d2a15099d28f0b85f3400f362b61abb",
+      "handoffSha256": "d6c3704cf1104387f57c3c238d5982b36d2a15099d28f0b85f3400f362b61abb",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/DefineGroupModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "162d8631d35913294bc3729d00de020d4eb8446bd9f9f1b9a7eca0f1021bac1b",
+      "handoffSha256": "162d8631d35913294bc3729d00de020d4eb8446bd9f9f1b9a7eca0f1021bac1b",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/NewBoardModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "3a35166d0dda26eaf21fe7e6155112266754799966638adc7694987f58df9040",
+      "handoffSha256": "3a35166d0dda26eaf21fe7e6155112266754799966638adc7694987f58df9040",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/NewEventModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "277a6f2442edf4925c4196bb493feb3d71e954f01fffb0a1ac7b2ab660914beb",
+      "handoffSha256": "277a6f2442edf4925c4196bb493feb3d71e954f01fffb0a1ac7b2ab660914beb",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/NewTaskModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "e309f469e4030131ef00a8ad83479aec9c46aed3ab5def764a785cfe792dd512",
+      "handoffSha256": "e309f469e4030131ef00a8ad83479aec9c46aed3ab5def764a785cfe792dd512",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/ShortcutsModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "b4639473e67fc01a428fbabba5742732f8b216716909b04c19eea922700db0f5",
+      "handoffSha256": "b4639473e67fc01a428fbabba5742732f8b216716909b04c19eea922700db0f5",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/modals/TeamMembersModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "59f26ce1443307c0528989df120026843aa6f331f74dc0396dc79e4db9a62832",
+      "handoffSha256": "59f26ce1443307c0528989df120026843aa6f331f74dc0396dc79e4db9a62832",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/notes/TeamNotesView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "4f71c16ac3159e01af93d41296f35be4ebe3f7c1ace5d8f1da3367c6321ca94f",
+      "handoffSha256": "4f71c16ac3159e01af93d41296f35be4ebe3f7c1ace5d8f1da3367c6321ca94f",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/overview/MyTasksView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "c387756a0bc79eeb7d459e8777b170821455dea142683e5a56234b359048d396",
+      "handoffSha256": "c387756a0bc79eeb7d459e8777b170821455dea142683e5a56234b359048d396",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/overview/OverviewView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "1b11250a47b048abe7da30dc0e47a534adf96681e16bcbb84904af5ca52a09f3",
+      "handoffSha256": "1b11250a47b048abe7da30dc0e47a534adf96681e16bcbb84904af5ca52a09f3",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/overview/ProjectsView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "76f77f87d1c5206106cbc0ea939cb80434528aec2337e756a75f267576d4e124",
+      "handoffSha256": "76f77f87d1c5206106cbc0ea939cb80434528aec2337e756a75f267576d4e124",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/task/TaskAttachmentPreview.tsx",
+      "classification": "task-module",
+      "sourceSha256": "5148e4abeeb59e8777efcc1e9d5343210c8590ae59e46569aaef7f3890c05e9d",
+      "handoffSha256": "5148e4abeeb59e8777efcc1e9d5343210c8590ae59e46569aaef7f3890c05e9d",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/task/TaskAttachments.tsx",
+      "classification": "task-module",
+      "sourceSha256": "450bf9b3538d18aa5f3345d6c95079a7ebb044bcbb29d77afe539254d9abfb58",
+      "handoffSha256": "450bf9b3538d18aa5f3345d6c95079a7ebb044bcbb29d77afe539254d9abfb58",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/task/TaskDetailModal.tsx",
+      "classification": "task-module",
+      "sourceSha256": "c30b0414688d8c4e56557a3b5adb2a25b71242621ab3a15016ddca1eba19b15b",
+      "handoffSha256": "c30b0414688d8c4e56557a3b5adb2a25b71242621ab3a15016ddca1eba19b15b",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/task/TaskRelatedDocuments.tsx",
+      "classification": "task-module",
+      "sourceSha256": "56826fb2c792a36ba7d2997a1153fdf01b6aba12cdf7058809bad50ed814bc35",
+      "handoffSha256": "56826fb2c792a36ba7d2997a1153fdf01b6aba12cdf7058809bad50ed814bc35",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/timeline/TimelineView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "b41aaa2bed78b69dff0fd33cf3b9c2837aaba3c6aee160de40e1a5c6c5e7b57f",
+      "handoffSha256": "b41aaa2bed78b69dff0fd33cf3b9c2837aaba3c6aee160de40e1a5c6c5e7b57f",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/components/workload/WorkloadView.tsx",
+      "classification": "task-module",
+      "sourceSha256": "90c672f16717e6b6aa05d245a66da7a7db72795ce293f46c8506b0300d34cc34",
+      "handoffSha256": "90c672f16717e6b6aa05d245a66da7a7db72795ce293f46c8506b0300d34cc34",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/context/TaskOrbitContext.tsx",
+      "classification": "task-module",
+      "sourceSha256": "60c269405be1c54668af509b390abcbc79d5754cc6b0b5635a54dbb9b24b211f",
+      "handoffSha256": "60c269405be1c54668af509b390abcbc79d5754cc6b0b5635a54dbb9b24b211f",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/dashboardFilters.mjs",
+      "classification": "task-module",
+      "sourceSha256": "d5f8a2b2d0062014d3ed65d6e2616688ce00fad6d5ea95700701b95ed4b2a1e3",
+      "handoffSha256": "d5f8a2b2d0062014d3ed65d6e2616688ce00fad6d5ea95700701b95ed4b2a1e3",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/data/initialData.ts",
+      "classification": "task-module",
+      "sourceSha256": "e0d30d042e307d413d591e8b062e180538cdc33c29f0c1cbf3a87797f8c37f25",
+      "handoffSha256": "09ad2302dda44d9602861b363286db31761523eeb3e5c785bc91ee32221b16da",
+      "sanitized": true
+    },
+    {
+      "path": "src/features/taskOrbit/navigation.ts",
+      "classification": "task-module",
+      "sourceSha256": "0e07cf4e2b689d587aa9236c6dfde138807253b9f6935ea4ab24a97e4fedc096",
+      "handoffSha256": "0e07cf4e2b689d587aa9236c6dfde138807253b9f6935ea4ab24a97e4fedc096",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/serverStorage.ts",
+      "classification": "task-module",
+      "sourceSha256": "05ba29060864fc0f71dee29a11820fec3eb3e7fa87091803a5062e3756d14081",
+      "handoffSha256": "05ba29060864fc0f71dee29a11820fec3eb3e7fa87091803a5062e3756d14081",
+      "sanitized": false
+    },
+    {
+      "path": "src/features/taskOrbit/types/task.ts",
+      "classification": "task-module",
+      "sourceSha256": "2757714db878ba68cfd9db21ff8dd8778eb6c9696dbb5f2f0e2db462edeb2517",
+      "handoffSha256": "2757714db878ba68cfd9db21ff8dd8778eb6c9696dbb5f2f0e2db462edeb2517",
+      "sanitized": false
+    },
+    {
+      "path": "src/types/drone.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "f3ccd608ac09499009639e0394bbe7dd2f142bc306a2f2913eba952e4fd48310",
+      "handoffSha256": "f3ccd608ac09499009639e0394bbe7dd2f142bc306a2f2913eba952e4fd48310",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/accountIdentity.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "fe4b990339de68f8dd8eafcda88d00689be34d437144e4cefa607c121864f434",
+      "handoffSha256": "fe4b990339de68f8dd8eafcda88d00689be34d437144e4cefa607c121864f434",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/formPdf.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "bc5c2b5420b00a46c4a4572cadd2c4089fc0ee11f1df77cb2346c6addb2ba389",
+      "handoffSha256": "bc5c2b5420b00a46c4a4572cadd2c4089fc0ee11f1df77cb2346c6addb2ba389",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/formPdfFilename.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "c5b4e1b17ad05b6150ec24dd6b62bb1932d58e2ccbec5cf6eb6e6bf886e9402b",
+      "handoffSha256": "c5b4e1b17ad05b6150ec24dd6b62bb1932d58e2ccbec5cf6eb6e6bf886e9402b",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/handoverRows.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "007f6cea545ef2dff1df5b168290e893a67abfd9e303d0dda16affb7d6d330f8",
+      "handoffSha256": "007f6cea545ef2dff1df5b168290e893a67abfd9e303d0dda16affb7d6d330f8",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/handoverUtils.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "0d147997682434f4274da0e50eebb2ec1d5ade2a2a3133655bddd89d592d990c",
+      "handoffSha256": "0d147997682434f4274da0e50eebb2ec1d5ade2a2a3133655bddd89d592d990c",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/incidentEntries.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "86c79d1bd93fe5a008587c31123c20f49b6b42c1b89d3a9ab1ecf38e4e4e1e33",
+      "handoffSha256": "86c79d1bd93fe5a008587c31123c20f49b6b42c1b89d3a9ab1ecf38e4e4e1e33",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/incidentProfile.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "b300bd10d6147bdfead2b9a53b851fef9673cde852d2c013f1a42138dd43c905",
+      "handoffSha256": "b300bd10d6147bdfead2b9a53b851fef9673cde852d2c013f1a42138dd43c905",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/pendingNotifications.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "795e91528153a68592c0c9e72e8e4f3836ba74fe2ee4117e979e90e18ec63cb5",
+      "handoffSha256": "795e91528153a68592c0c9e72e8e4f3836ba74fe2ee4117e979e90e18ec63cb5",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/realtimeSync.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "26ed0d0f770e6528757dcbfaeba5ff5942277638964a90a667bedfd33f12cad6",
+      "handoffSha256": "26ed0d0f770e6528757dcbfaeba5ff5942277638964a90a667bedfd33f12cad6",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/recordId.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "7dbc5472d42820bff94a7616a29c398607ba1f3476ea03ed9177c1ea21fe36c9",
+      "handoffSha256": "7dbc5472d42820bff94a7616a29c398607ba1f3476ea03ed9177c1ea21fe36c9",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/recordSync.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "b137e8dc2a74864e6ceae7ecb9d4303c7ba59a89e167098b765068a4d07b9b10",
+      "handoffSha256": "b137e8dc2a74864e6ceae7ecb9d4303c7ba59a89e167098b765068a4d07b9b10",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/reportSequence.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "c051b51d5c643c7708c54a509ebe75645b420180d8bd27e106a234af85510c9d",
+      "handoffSha256": "c051b51d5c643c7708c54a509ebe75645b420180d8bd27e106a234af85510c9d",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/requestPreparation.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "30230853517e7dbbbb861502eaee8b3511c12f4597dc0d855ef3ff76ae613256",
+      "handoffSha256": "30230853517e7dbbbb861502eaee8b3511c12f4597dc0d855ef3ff76ae613256",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/searchText.mjs",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "cad2158f888f6b83c55bb929d2291232d7338b27e744c209ea9de74e26782a67",
+      "handoffSha256": "cad2158f888f6b83c55bb929d2291232d7338b27e744c209ea9de74e26782a67",
+      "sanitized": false
+    },
+    {
+      "path": "src/utils/useTabletUi.ts",
+      "classification": "shared-integration-dependency",
+      "sourceSha256": "cf6895e28a20788e03bb1469ec3fd1f3cf98438af9ac9f874f70b9bf81a9c94f",
+      "handoffSha256": "cf6895e28a20788e03bb1469ec3fd1f3cf98438af9ac9f874f70b9bf81a9c94f",
+      "sanitized": false
+    },
+    {
+      "path": "tests/request-tasks.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "d809cdd97b63f71b5bf519bfa6cbda6a9326d85efd5a6e33103d8b4bdb0c9d42",
+      "handoffSha256": "d809cdd97b63f71b5bf519bfa6cbda6a9326d85efd5a6e33103d8b4bdb0c9d42",
+      "sanitized": false
+    },
+    {
+      "path": "tests/shared-task-workspace.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "765652ead9ee230ab0c82137528655ce66f1967572fccc79da34a9b1fc0c2539",
+      "handoffSha256": "765652ead9ee230ab0c82137528655ce66f1967572fccc79da34a9b1fc0c2539",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-assignee-search.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "280f19f55bfed8bdd45afd07308c9a9ce8ca8d398bf44f3cc44562c1d4141203",
+      "handoffSha256": "280f19f55bfed8bdd45afd07308c9a9ce8ca8d398bf44f3cc44562c1d4141203",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-assignment-notifications-api.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "21933dba309a68cb40e78fb6a415099b6377f152fb965c608d378e9c79570268",
+      "handoffSha256": "21933dba309a68cb40e78fb6a415099b6377f152fb965c608d378e9c79570268",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-attachment-preview.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "4454c46e31df2759ba4f7485f63e57c1237db915cd095d5740df6cd021ddc39b",
+      "handoffSha256": "4454c46e31df2759ba4f7485f63e57c1237db915cd095d5740df6cd021ddc39b",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-automation-api.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "361cde6af51aab28ab8d2a58e412e2413dfd34e2ec0b80f96bfeac68c778b9ad",
+      "handoffSha256": "361cde6af51aab28ab8d2a58e412e2413dfd34e2ec0b80f96bfeac68c778b9ad",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-automation.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "0bf43c0cd8a96046d26da45df2d004c655457ee42005dc546e46c0ac62aa21cf",
+      "handoffSha256": "0bf43c0cd8a96046d26da45df2d004c655457ee42005dc546e46c0ac62aa21cf",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-completion-api.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "ae0e5bbb6b909f73860e041288e85ab757012092523dbbf579a83470bd7a1eb3",
+      "handoffSha256": "ae0e5bbb6b909f73860e041288e85ab757012092523dbbf579a83470bd7a1eb3",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-dashboard-accuracy.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "981fcee6c2f4ac34ad904cb610ef9efab7d3e70bfa89d9d66a453c6533ab9ac4",
+      "handoffSha256": "981fcee6c2f4ac34ad904cb610ef9efab7d3e70bfa89d9d66a453c6533ab9ac4",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-discussion.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "bcb7ef8c481e3ca354c494faadb772574c141c8df076257c1183d5bbd2de4694",
+      "handoffSha256": "bcb7ef8c481e3ca354c494faadb772574c141c8df076257c1183d5bbd2de4694",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-notification-preview.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "4521949aa2fd10a7d8c008a35f9ea73ac26e6aa3b58eabdc14e7d6d32593d133",
+      "handoffSha256": "4521949aa2fd10a7d8c008a35f9ea73ac26e6aa3b58eabdc14e7d6d32593d133",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-reference-board.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "88e1cefe88bbb273a203c30c41e71deca5e66f605c759f2840f683e7453bc627",
+      "handoffSha256": "88e1cefe88bbb273a203c30c41e71deca5e66f605c759f2840f683e7453bc627",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-related-documents-api.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "04db7a54073bd39c7667b8aa986d43f1348a19896b833f797a71f5309eafb595",
+      "handoffSha256": "04db7a54073bd39c7667b8aa986d43f1348a19896b833f797a71f5309eafb595",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-related-documents.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "6e356a80aaf1e1efc8adeb143a1122ad6b709c94c96c9ed701eae834c2641787",
+      "handoffSha256": "6e356a80aaf1e1efc8adeb143a1122ad6b709c94c96c9ed701eae834c2641787",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-required-forms-api.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "1797308d0fb282643b7ac1ce550995d2f1b67a56e240d0e4150b911d115aabab",
+      "handoffSha256": "1797308d0fb282643b7ac1ce550995d2f1b67a56e240d0e4150b911d115aabab",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-workspace-dashboard.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "201392fd449f53f09cb4a266313065b60480fe9b4d143b710a7c52b8c04c33be",
+      "handoffSha256": "201392fd449f53f09cb4a266313065b60480fe9b4d143b710a7c52b8c04c33be",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-workspace-directory.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "e69f695dbd223843dcdf7e07a31d4da93505558c6dea176b5613acbf60be6732",
+      "handoffSha256": "e69f695dbd223843dcdf7e07a31d4da93505558c6dea176b5613acbf60be6732",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-workspace-samples.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "2722cc16fba90830967d0c2a34883be999951bf59cad0986d24ef26ecfcc82c8",
+      "handoffSha256": "2722cc16fba90830967d0c2a34883be999951bf59cad0986d24ef26ecfcc82c8",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-workspace-simple.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "3830d9d21c2956353ca7103984c87910ca270d4e390d34e2c6fa6511db37a075",
+      "handoffSha256": "3830d9d21c2956353ca7103984c87910ca270d4e390d34e2c6fa6511db37a075",
+      "sanitized": false
+    },
+    {
+      "path": "tests/task-workspace-storage.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "e109c420e042eec178182fdea4144cc3c9d4ffb59c427fe1cedd4a9e1618352a",
+      "handoffSha256": "e109c420e042eec178182fdea4144cc3c9d4ffb59c427fe1cedd4a9e1618352a",
+      "sanitized": false
+    },
+    {
+      "path": "server/events.mjs",
+      "classification": "task-module",
+      "sourceSha256": "f57511e0557ac3f45d47ea812830f6085edce0bce198917928be566848b7d090",
+      "handoffSha256": "f57511e0557ac3f45d47ea812830f6085edce0bce198917928be566848b7d090",
+      "sanitized": false
+    },
+    {
+      "path": "tests/events.test.mjs",
+      "classification": "task-module",
+      "sourceSha256": "14fa23540e74072121c7f04507bdf8bcfb6b87fa44d255fe1ff8eb4a2d502692",
+      "handoffSha256": "14fa23540e74072121c7f04507bdf8bcfb6b87fa44d255fe1ff8eb4a2d502692",
+      "sanitized": false
+    }
+  ]
+}

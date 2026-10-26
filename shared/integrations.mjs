@@ -1,0 +1,2 @@
+export const INTEGRATIONS=[{id:'node_red_alarm_simulator',name:'Node-RED alarm simulator',description:'Receive simulated fire alarms and open the isolated notification and Fire SOP workflow.',mode:'Simulation only'}];
+export const INTEGRATION_SETTINGS_FUNCTIONS=[{key:'integrations_view',featureId:'SETTINGS',viewPermission:'VIEW_TAB_SETTINGS',anyOf:['INTEGRATIONS_VIEW']},{key:'integrations_configure',featureId:'SETTINGS',viewPermission:'VIEW_TAB_SETTINGS',anyOf:['INTEGRATIONS_CONFIGURE']}];

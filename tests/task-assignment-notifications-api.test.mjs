@@ -1,0 +1,43 @@
+import {WebSocket} from 'ws';
+import {pendingNotificationTasks} from '../src/utils/pendingNotifications.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';import net from 'node:net';import crypto from 'node:crypto';import {spawn} from 'node:child_process';import {once} from 'node:events';import bcrypt from 'bcryptjs';
+import {DatabaseSync} from 'node:sqlite';
+import {FleetStore} from '../server/database.mjs';
+test('task assignment reaches the assignee over WebSocket and REST and appears in the bell',async t=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'task-completion-api-'));const runtime=path.join(root,'runtime');const store=new FleetStore(runtime);const password='Disposable-Api-Password-2026!';const passwordHash=await bcrypt.hash(password,4);
+ const users=['ADMIN','USER'].map((role,index)=>({id:role.toLowerCase(),employeeId:'test-'+index,qatarId:'test-id-'+index,name:role,userRole:role,accountStatus:'ACTIVE',lastPasswordChange:new Date().toISOString(),passwordHash}));
+ store.initialize(path.join(root,'missing.json'),{drones:[],batteries:[],accessories:[],streamingDevices:[],checkouts:[],handoverForms:[],incidentReports:[],confiscatedDrones:[],notifications:[],auditLogs:[],users,groupPrivileges:{ADMIN:{},USER:{VIEW_TAB_TASK_MANAGEMENT:true,VIEW_TAB_NOTIFICATIONS:true,TASK_WORKSPACE_MANAGE:true},OFFICER:{}}});store.close();
+ const listener=net.createServer();listener.listen(0,'127.0.0.1');await once(listener,'listening');const port=listener.address().port;await new Promise(resolve=>listener.close(resolve));
+ const child=spawn(process.execPath,['--import','tsx','server.ts'],{cwd:path.resolve(import.meta.dirname,'..'),env:{...process.env,NODE_ENV:'production',HOST:'127.0.0.1',PORT:String(port),DATA_DIR:runtime,BACKUP_DIR:path.join(root,'backups'),LEGACY_DATA_FILE:path.join(root,'missing.json'),JWT_SECRET:crypto.randomBytes(32).toString('hex')},stdio:['ignore','pipe','pipe']});let logs='';child.stdout.on('data',data=>logs+=data);child.stderr.on('data',data=>logs+=data);
+ t.after(async()=>{if(child.exitCode===null){const stopped=once(child,'exit');child.kill();await stopped;}fs.rmSync(root,{recursive:true,force:true});});
+ const base='http://127.0.0.1:'+port;let ready=false,lastStartupError='';for(let count=0;count<150;count++){if(child.exitCode!==null)throw Error(logs);try{const response=await fetch(base+'/api/health',{signal:AbortSignal.timeout(1000)});if(response.ok){ready=true;break;}lastStartupError='Health endpoint returned '+response.status;}catch(error){lastStartupError=error.cause?.code||error.message;if(['EACCES','EPERM'].includes(error.cause?.code))throw Error('Local test-server access was blocked ('+error.cause.code+'). Run this API test with localhost network access enabled.');}await new Promise(resolve=>setTimeout(resolve,100));}assert.ok(ready,lastStartupError+'\n'+logs);
+ const csrf=async()=>(await (await fetch(base+'/api/auth/csrf-token')).json()).csrfToken;
+ const request=async(route,method='GET',body,token,withCsrf=true)=>fetch(base+route,{method,headers:{...(token?{Authorization:'Bearer '+token}:{}),...(method==='GET'?{}:{'Content-Type':'application/json',...(withCsrf?{'x-csrf-token':await csrf()}: {})})},...(body===undefined?{}:{body:JSON.stringify(body)})});
+ const login=async employeeId=>{const response=await request('/api/auth/login','POST',{employeeId,password,sessionId:crypto.randomUUID()});assert.equal(response.status,200);return (await response.json()).token;};
+ const admin=await login('test-0'),user=await login('test-1');
+ const socket=new WebSocket(base.replace('http:','ws:')+'/api/ws');t.after(()=>socket.terminate());
+ const messages=[];socket.on('message',bytes=>messages.push(JSON.parse(bytes.toString())));
+ const waitFor=async predicate=>{for(let i=0;i<100;i++){const result=messages.find(predicate);if(result)return result;await new Promise(resolve=>setTimeout(resolve,25));}throw Error('Expected WebSocket notification was not received.');};
+ await once(socket,'open');const sessionId=JSON.parse(Buffer.from(user.split('.')[1],'base64url')).sessionId;
+ socket.send(JSON.stringify({type:'IDENTIFY_SESSION',token:user,sessionId}));await waitFor(message=>message.type==='INIT_STATE');
+ const initial=await (await request('/api/task-workspace/state','GET',undefined,admin)).json();
+ initial.data.boards.push({id:'assignment-board',title:'Assignments',columns:[{id:'todo',title:'TO-DO'},{id:'progress',title:'IN PROGRESS'},{id:'done',title:'COMPLETED'}]});
+ initial.data.tasks.push({id:'assigned-task',title:'Inspect assigned equipment',boardId:'assignment-board',columnId:'todo',assigneeIds:['user'],groupIds:[],attachments:[],comments:[],subtasks:[]});
+ let response=await request('/api/task-workspace/state','PUT',{ownerId:'admin',version:initial.version,data:initial.data},admin);assert.equal(response.status,200,await response.clone().text());
+ const delivered=await waitFor(message=>message.type==='SYNC_UPDATE'&&message.entity==='notifications'&&message.data.some(notice=>notice.workspaceTaskId==='assigned-task'));
+ const notice=delivered.data.find(notice=>notice.workspaceTaskId==='assigned-task');assert.equal(notice.targetOfficerId,'user');assert.equal(notice.status,'UNREAD');
+ assert.equal(pendingNotificationTasks(delivered.data,{id:'user',employeeId:'test-1'}).filter(entry=>entry.id===notice.id).length,1);
+ const fleet=async()=>await (await request('/api/fleet/state','GET',undefined,user)).json();
+ let state=await fleet();assert.equal(state.notifications.filter(n=>n.workspaceTaskId==='assigned-task').length,1);
+ // Unchanged saves do not duplicate assignment notifications.
+ let snapshot=await (await request('/api/task-workspace/state','GET',undefined,admin)).json();
+ assert.equal((await request('/api/task-workspace/state','PUT',{ownerId:'admin',version:snapshot.version,data:snapshot.data},admin)).status,200);
+ state=await fleet();assert.equal(state.notifications.filter(n=>n.workspaceTaskId==='assigned-task').length,1);
+ snapshot=await (await request('/api/task-workspace/state','GET',undefined,user)).json();snapshot.data.tasks[0].columnId='progress';
+ assert.equal((await request('/api/task-workspace/state','PUT',{ownerId:'user',version:snapshot.version,data:snapshot.data},user)).status,200);
+ // The creator receives the assignee's update; the assignee retains the incoming assignment.
+ state=await fleet();assert.equal(pendingNotificationTasks(state.notifications,{id:'user',employeeId:'test-1'}).filter(entry=>entry.direction==='assigned').length,1);
+ const operations=state.notifications.filter(n=>n.workspaceTaskId==='assigned-task'&&n.targetOfficerId==='user').map(n=>({entity:'notifications',id:n.id,version:state.recordVersions.notifications[n.id],record:{...n,status:'READ'}}));
+ response=await request('/api/fleet/mutate','POST',{operations},user);assert.equal(response.status,200,await response.clone().text());
+ state=await fleet();assert.equal(pendingNotificationTasks(state.notifications,{id:'user',employeeId:'test-1'}).length,0);
+});

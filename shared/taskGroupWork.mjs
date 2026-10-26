@@ -1,0 +1,3 @@
+export const TASK_GROUP_WORK_FUNCTIONS=[{key:'work-on-group-assigned-task',featureId:'TASK_MANAGEMENT',viewPermission:'VIEW_TAB_TASK_MANAGEMENT',anyOf:['TASK_WORKSPACE_MANAGE'],authorization:'Active canonical assigned-group member; task work only. No management or approval rights.'}];
+export function isTaskGroupAssignee(task,user,groups){return !!(user?.id&&user.groupId&&task?.groupIds?.includes(user.groupId)&&(!groups||groups.some(group=>group.id===user.groupId&&!group.archivedAt)));}
+export function isTaskAssignee(task,user,groups){return !!(user?.id&&(task?.assigneeIds?.includes(user.id)||isTaskGroupAssignee(task,user,groups)));}

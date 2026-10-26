@@ -1,0 +1,2785 @@
+@import "tailwindcss";
+@custom-variant orbit-dark (&:where(:root:not([data-display-mode="light"]) .task-orbit-workspace, :root:not([data-display-mode="light"]) .task-orbit-workspace *));
+/* Saturated blue actions with semantic status colors; green remains single-accent. */
+:root {
+  --app-accent-50: #EFF6FF;
+  --app-accent-100: #DBEAFE;
+  --app-accent-200: #BFDBFE;
+  --app-accent-300: #60A5FA;
+  --app-accent-400: #3B82F6;
+  --app-accent-500: #3B82F6;
+  --app-accent-600: #2563EB;
+  --app-accent-700: #1D4ED8;
+  --app-accent-800: #1E40AF;
+  --app-accent-900: #172F63;
+  --app-accent-950: #10234A;
+  --app-success-50: #F0FDF4;
+  --app-success-100: #DCFCE7;
+  --app-success-200: #BBF7D0;
+  --app-success-300: #86EFAC;
+  --app-success-400: #4ADE80;
+  --app-success-500: #4ADE80;
+  --app-success-600: #22C55E;
+  --app-success-700: #15803D;
+  --app-success-800: #166534;
+  --app-success-900: #14532D;
+  --app-success-950: #0C2D1A;
+  --app-warning-50: #F5F3FF;
+  --app-warning-100: #EDE9FE;
+  --app-warning-200: #DDD6FE;
+  --app-warning-300: #D8CCFF;
+  --app-warning-400: #C4B5FD;
+  --app-warning-500: #8B5CF6;
+  --app-warning-600: #8B5CF6;
+  --app-warning-700: #7C3AED;
+  --app-warning-800: #8B5CF6;
+  --app-warning-900: #32234C;
+  --app-warning-950: #251B3B;
+  --app-error-50: #F5F3FF;
+  --app-error-100: #EDE9FE;
+  --app-error-200: #DDD6FE;
+  --app-error-300: #D8CCFF;
+  --app-error-400: #C4B5FD;
+  --app-error-500: #8B5CF6;
+  --app-error-600: #8B5CF6;
+  --app-error-700: #7C3AED;
+  --app-error-800: #8B5CF6;
+  --app-error-900: #32234C;
+  --app-error-950: #251B3B;
+  --app-missing-50: #FFFFFF;
+  --app-missing-100: #FFFFFF;
+  --app-missing-200: #FFFFFF;
+  --app-missing-300: #FFFFFF;
+  --app-missing-400: #FFFFFF;
+  --app-missing-500: #FFFFFF;
+  --app-missing-600: #D1D5DB;
+  --app-missing-700: #9CA3AF;
+  --app-missing-800: #4B5563;
+  --app-missing-900: #343A43;
+  --app-missing-950: #24282E;
+}
+:root[data-color-theme="green"] {
+  --app-accent-50: #F0F8F3;
+  --app-accent-100: #DAEFE2;
+  --app-accent-200: #B9DFC8;
+  --app-accent-300: #A3D9BA;
+  --app-accent-400: #8CCFA8;
+  --app-accent-500: #8CCFA8;
+  --app-accent-600: #6CAB86;
+  --app-accent-700: #477F60;
+  --app-accent-800: #345642;
+  --app-accent-900: #284534;
+  --app-accent-950: #20372B;
+  --app-success-50: var(--app-accent-50);
+  --app-success-100: var(--app-accent-100);
+  --app-success-200: var(--app-accent-200);
+  --app-success-300: var(--app-accent-300);
+  --app-success-400: var(--app-accent-400);
+  --app-success-500: var(--app-accent-500);
+  --app-success-600: var(--app-accent-600);
+  --app-success-700: var(--app-accent-700);
+  --app-success-800: var(--app-accent-800);
+  --app-success-900: var(--app-accent-900);
+  --app-success-950: var(--app-accent-950);
+  --app-warning-50: var(--app-accent-50);
+  --app-warning-100: var(--app-accent-100);
+  --app-warning-200: var(--app-accent-200);
+  --app-warning-300: var(--app-accent-300);
+  --app-warning-400: var(--app-accent-400);
+  --app-warning-500: var(--app-accent-500);
+  --app-warning-600: var(--app-accent-600);
+  --app-warning-700: var(--app-accent-700);
+  --app-warning-800: var(--app-accent-800);
+  --app-warning-900: var(--app-accent-900);
+  --app-warning-950: var(--app-accent-950);
+  --app-error-50: var(--app-accent-50);
+  --app-error-100: var(--app-accent-100);
+  --app-error-200: var(--app-accent-200);
+  --app-error-300: var(--app-accent-300);
+  --app-error-400: var(--app-accent-400);
+  --app-error-500: var(--app-accent-500);
+  --app-error-600: var(--app-accent-600);
+  --app-error-700: var(--app-accent-700);
+  --app-error-800: var(--app-accent-800);
+  --app-error-900: var(--app-accent-900);
+  --app-error-950: var(--app-accent-950);
+  --app-missing-50: var(--app-accent-50);
+  --app-missing-100: var(--app-accent-100);
+  --app-missing-200: var(--app-accent-200);
+  --app-missing-300: var(--app-accent-300);
+  --app-missing-400: var(--app-accent-400);
+  --app-missing-500: var(--app-accent-500);
+  --app-missing-600: var(--app-accent-600);
+  --app-missing-700: var(--app-accent-700);
+  --app-missing-800: var(--app-accent-800);
+  --app-missing-900: var(--app-accent-900);
+  --app-missing-950: var(--app-accent-950);
+}
+
+@theme inline {
+  --color-slate-50: var(--app-slate-50);
+  --color-slate-100: var(--app-slate-100);
+  --color-slate-200: var(--app-slate-200);
+  --color-slate-300: var(--app-slate-300);
+  --color-slate-400: var(--app-slate-400);
+  --color-slate-500: var(--app-slate-500);
+  --color-slate-600: var(--app-slate-600);
+  --color-slate-700: var(--app-slate-700);
+  --color-slate-800: var(--app-slate-800);
+  --color-slate-850: var(--app-slate-850);
+  --color-slate-900: var(--app-slate-900);
+  --color-slate-950: var(--app-slate-950);
+  --color-sky-50: var(--app-accent-50);
+  --color-sky-100: var(--app-accent-100);
+  --color-sky-200: var(--app-accent-200);
+  --color-sky-300: var(--app-accent-300);
+  --color-sky-400: var(--app-accent-400);
+  --color-sky-500: var(--app-accent-500);
+  --color-sky-600: var(--app-accent-600);
+  --color-sky-700: var(--app-accent-700);
+  --color-sky-800: var(--app-accent-800);
+  --color-sky-900: var(--app-accent-900);
+  --color-sky-950: var(--app-accent-950);
+  --color-cyan-50: var(--app-accent-50);
+  --color-cyan-100: var(--app-accent-100);
+  --color-cyan-200: var(--app-accent-200);
+  --color-cyan-300: var(--app-accent-300);
+  --color-cyan-400: var(--app-accent-400);
+  --color-cyan-500: var(--app-accent-500);
+  --color-cyan-600: var(--app-accent-600);
+  --color-cyan-700: var(--app-accent-700);
+  --color-cyan-800: var(--app-accent-800);
+  --color-cyan-900: var(--app-accent-900);
+  --color-cyan-950: var(--app-accent-950);
+  --color-blue-50: var(--app-accent-50);
+  --color-blue-100: var(--app-accent-100);
+  --color-blue-200: var(--app-accent-200);
+  --color-blue-300: var(--app-accent-300);
+  --color-blue-400: var(--app-accent-400);
+  --color-blue-500: var(--app-accent-500);
+  --color-blue-600: var(--app-accent-600);
+  --color-blue-700: var(--app-accent-700);
+  --color-blue-800: var(--app-accent-800);
+  --color-blue-900: var(--app-accent-900);
+  --color-blue-950: var(--app-accent-950);
+  --color-emerald-50: var(--app-success-50);
+  --color-emerald-100: var(--app-success-100);
+  --color-emerald-200: var(--app-success-200);
+  --color-emerald-300: var(--app-success-300);
+  --color-emerald-400: var(--app-success-400);
+  --color-emerald-500: var(--app-success-500);
+  --color-emerald-600: var(--app-success-600);
+  --color-emerald-700: var(--app-success-700);
+  --color-emerald-800: var(--app-success-800);
+  --color-emerald-900: var(--app-success-900);
+  --color-emerald-950: var(--app-success-950);
+  --color-green-50: var(--app-success-50);
+  --color-green-100: var(--app-success-100);
+  --color-green-200: var(--app-success-200);
+  --color-green-300: var(--app-success-300);
+  --color-green-400: var(--app-success-400);
+  --color-green-500: var(--app-success-500);
+  --color-green-600: var(--app-success-600);
+  --color-green-700: var(--app-success-700);
+  --color-green-800: var(--app-success-800);
+  --color-green-900: var(--app-success-900);
+  --color-green-950: var(--app-success-950);
+  --color-teal-50: var(--app-success-50);
+  --color-teal-100: var(--app-success-100);
+  --color-teal-200: var(--app-success-200);
+  --color-teal-300: var(--app-success-300);
+  --color-teal-400: var(--app-success-400);
+  --color-teal-500: var(--app-success-500);
+  --color-teal-600: var(--app-success-600);
+  --color-teal-700: var(--app-success-700);
+  --color-teal-800: var(--app-success-800);
+  --color-teal-900: var(--app-success-900);
+  --color-teal-950: var(--app-success-950);
+  --color-amber-50: var(--app-warning-50);
+  --color-amber-100: var(--app-warning-100);
+  --color-amber-200: var(--app-warning-200);
+  --color-amber-300: var(--app-warning-300);
+  --color-amber-400: var(--app-warning-400);
+  --color-amber-500: var(--app-warning-500);
+  --color-amber-600: var(--app-warning-600);
+  --color-amber-700: var(--app-warning-700);
+  --color-amber-800: var(--app-warning-800);
+  --color-amber-900: var(--app-warning-900);
+  --color-amber-950: var(--app-warning-950);
+  --color-orange-50: var(--app-warning-50);
+  --color-orange-100: var(--app-warning-100);
+  --color-orange-200: var(--app-warning-200);
+  --color-orange-300: var(--app-warning-300);
+  --color-orange-400: var(--app-warning-400);
+  --color-orange-500: var(--app-warning-500);
+  --color-orange-600: var(--app-warning-600);
+  --color-orange-700: var(--app-warning-700);
+  --color-orange-800: var(--app-warning-800);
+  --color-orange-900: var(--app-warning-900);
+  --color-orange-950: var(--app-warning-950);
+  --color-yellow-50: var(--app-warning-50);
+  --color-yellow-100: var(--app-warning-100);
+  --color-yellow-200: var(--app-warning-200);
+  --color-yellow-300: var(--app-warning-300);
+  --color-yellow-400: var(--app-warning-400);
+  --color-yellow-500: var(--app-warning-500);
+  --color-yellow-600: var(--app-warning-600);
+  --color-yellow-700: var(--app-warning-700);
+  --color-yellow-800: var(--app-warning-800);
+  --color-yellow-900: var(--app-warning-900);
+  --color-yellow-950: var(--app-warning-950);
+  --color-rose-50: var(--app-error-50);
+  --color-rose-100: var(--app-error-100);
+  --color-rose-200: var(--app-error-200);
+  --color-rose-300: var(--app-error-300);
+  --color-rose-400: var(--app-error-400);
+  --color-rose-500: var(--app-error-500);
+  --color-rose-600: var(--app-error-600);
+  --color-rose-700: var(--app-error-700);
+  --color-rose-800: var(--app-error-800);
+  --color-rose-900: var(--app-error-900);
+  --color-rose-950: var(--app-error-950);
+  --color-red-50: var(--app-error-50);
+  --color-red-100: var(--app-error-100);
+  --color-red-200: var(--app-error-200);
+  --color-red-300: var(--app-error-300);
+  --color-red-400: var(--app-error-400);
+  --color-red-500: var(--app-error-500);
+  --color-red-600: var(--app-error-600);
+  --color-red-700: var(--app-error-700);
+  --color-red-800: var(--app-error-800);
+  --color-red-900: var(--app-error-900);
+  --color-red-950: var(--app-error-950);
+  --color-indigo-50: var(--app-accent-50);
+  --color-indigo-100: var(--app-accent-100);
+  --color-indigo-200: var(--app-accent-200);
+  --color-indigo-300: var(--app-accent-300);
+  --color-indigo-400: var(--app-accent-400);
+  --color-indigo-500: var(--app-accent-500);
+  --color-indigo-600: var(--app-accent-600);
+  --color-indigo-700: var(--app-accent-700);
+  --color-indigo-800: var(--app-accent-800);
+  --color-indigo-900: var(--app-accent-900);
+  --color-indigo-950: var(--app-accent-950);
+  --color-purple-50: var(--app-success-50);
+  --color-purple-100: var(--app-success-100);
+  --color-purple-200: var(--app-success-200);
+  --color-purple-300: var(--app-success-300);
+  --color-purple-400: var(--app-success-400);
+  --color-purple-500: var(--app-success-500);
+  --color-purple-600: var(--app-success-600);
+  --color-purple-700: var(--app-success-700);
+  --color-purple-800: var(--app-success-800);
+  --color-purple-900: var(--app-success-900);
+  --color-purple-950: var(--app-success-950);
+  --color-violet-50: var(--app-success-50);
+  --color-violet-100: var(--app-success-100);
+  --color-violet-200: var(--app-success-200);
+  --color-violet-300: var(--app-success-300);
+  --color-violet-400: var(--app-success-400);
+  --color-violet-500: var(--app-success-500);
+  --color-violet-600: var(--app-success-600);
+  --color-violet-700: var(--app-success-700);
+  --color-violet-800: var(--app-success-800);
+  --color-violet-900: var(--app-success-900);
+  --color-violet-950: var(--app-success-950);
+  --color-fuchsia-50: var(--app-success-50);
+  --color-fuchsia-100: var(--app-success-100);
+  --color-fuchsia-200: var(--app-success-200);
+  --color-fuchsia-300: var(--app-success-300);
+  --color-fuchsia-400: var(--app-success-400);
+  --color-fuchsia-500: var(--app-success-500);
+  --color-fuchsia-600: var(--app-success-600);
+  --color-fuchsia-700: var(--app-success-700);
+  --color-fuchsia-800: var(--app-success-800);
+  --color-fuchsia-900: var(--app-success-900);
+  --color-fuchsia-950: var(--app-success-950);
+  --color-missing-50: var(--app-missing-50);
+  --color-missing-100: var(--app-missing-100);
+  --color-missing-200: var(--app-missing-200);
+  --color-missing-300: var(--app-missing-300);
+  --color-missing-400: var(--app-missing-400);
+  --color-missing-500: var(--app-missing-500);
+  --color-missing-600: var(--app-missing-600);
+  --color-missing-700: var(--app-missing-700);
+  --color-missing-800: var(--app-missing-800);
+  --color-missing-900: var(--app-missing-900);
+  --color-missing-950: var(--app-missing-950);
+}
+
+
+
+@layer base {
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  #root {
+    max-width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #printable-handover-sheet,
+  #printable-handover-sheet *,
+  #printable-incident-sheet,
+  #printable-incident-sheet *,
+  #printable-confiscated-sheet,
+  #printable-confiscated-sheet *,
+  #printable-correspondence-sheet,
+  #printable-correspondence-sheet *,
+  #printable-confiscated-container,
+  #printable-confiscated-container *,
+  .printable-confiscated-page,
+  .printable-confiscated-page * {
+    visibility: visible;
+  }
+  #printable-handover-sheet,
+  #printable-incident-sheet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  #printable-confiscated-sheet,
+  #printable-correspondence-sheet,
+  .printable-confiscated-page {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+    margin-top: 15mm !important;
+  }
+}
+
+/* Adjoining tiles follow the reference image's landscape proportions. */
+.dashboard-drone-panel { container-type: inline-size; }
+.dashboard-drone-grid {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--app-slate-800);
+}
+.dashboard-drone-cell {
+  position: relative;
+  aspect-ratio: 459 / 300;
+  min-width: 0;
+  background: var(--app-slate-900);
+}
+.dashboard-drone-model-button {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+.dashboard-drone-model-button:hover { background: var(--app-slate-850); }
+.dashboard-drone-model-button:focus-visible { outline: 2px solid var(--app-accent-400); outline-offset: -3px; }
+.dashboard-drone-image {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42%;
+  height: 32.4%;
+  object-fit: contain;
+}
+.dashboard-drone-details {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+.dashboard-drone-name {
+  font-size: clamp(13.2px, 1.452cqi, 17.16px);
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--app-slate-200);
+}
+.dashboard-drone-quantity {
+  color: var(--app-slate-400);
+  font-size: clamp(11.52px, 1.248cqi, 13.44px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.dashboard-drone-active {
+  position: absolute;
+  top: 49%;
+  left: 10%;
+  padding: 5px 12px;
+  border: 1px solid rgb(74 222 128 / 18%);
+  border-radius: 999px;
+  background: rgb(74 222 128 / 10%);
+  color: var(--fleet-available-text);
+  font-size: clamp(9.6px, 1.056cqi, 11.52px);
+  line-height: 1.4;
+  font-weight: 400;
+  cursor: pointer;
+}
+.dashboard-drone-active:hover { background: rgb(74 222 128 / 18%); }
+.dashboard-drone-active:focus-visible { outline: 2px solid #4ADE80; outline-offset: 2px; }
+
+@container (max-width: 380px) {
+  .dashboard-drone-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Individual product proportions, relative to the shared 42% by 32.4% image box. */
+.dashboard-drone-image[src$="/dji-matrice-30.png"] {
+  width: 48.3%;
+  height: 37.26%;
+}
+.dashboard-drone-image[src$="/dji-matrice-350.png"],
+.dashboard-drone-image[src$="/dji-matrice-400.png"],
+.dashboard-drone-image[src$="/autel-dragonfish-standard.png"] {
+  width: 60.48%;
+  height: 46.656%;
+}
+
+.dashboard-drone-image[src$="/dji-air-2s.png"] {
+  width: 33.6%;
+  height: 25.92%;
+}
+
+.dashboard-overview-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (min-width: 1280px) {
+  .dashboard-overview-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.dashboard-drone-image[src$="/dji-matrice-300.png"] {
+  width: 54.6%;
+  height: 42.12%;
+}
+
+/* Match the 32px New UAV Handover Form action height within Inventory toolbars. */
+.inventory-filter-controls input:not([type="checkbox"]):not([type="radio"]),
+.inventory-filter-controls button {
+  height: 32px;
+  min-height: 32px;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Summary counts use the same compact container and controls as Inventory tabs. */
+.compact-summary-bar {
+  gap: 8px;
+  padding: 8px;
+  background: var(--color-slate-900);
+  border: 1px solid var(--color-slate-800);
+  border-radius: 8px;
+}
+.compact-summary-bar > div,
+.compact-summary-bar > button {
+  min-width: 0;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.compact-summary-bar > :is(div, button) > div:first-of-type {
+  min-width: 0;
+  margin: 0;
+  gap: 6px;
+  font-size: 12px;
+}
+.compact-summary-bar > :is(div, button) > div:nth-of-type(2) {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.compact-summary-bar > :is(div, button) > div:nth-of-type(n+3) {
+  display: none;
+}
+.compact-summary-bar svg { flex-shrink: 0; width: 14px; height: 14px; }
+
+/* Fixed icon / label / count columns across navigation and summary bars. */
+.uniform-top-tabs > button,
+.compact-summary-bar > :is(div, button) {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+.uniform-top-tabs > button > svg {
+  grid-column: 1;
+  grid-row: 1;
+  width: 14px;
+  height: 14px;
+}
+.uniform-top-tabs > button > span:first-of-type {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  text-align: center;
+}
+.uniform-top-tabs > button > span:nth-of-type(2) {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+.compact-summary-bar > :is(div, button) > div:first-of-type {
+  display: contents;
+}
+.compact-summary-bar > :is(div, button) > div:first-of-type > svg {
+  grid-column: 1;
+  grid-row: 1;
+}
+.compact-summary-bar > :is(div, button) > div:first-of-type > span:first-of-type {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  text-align: center;
+}
+.compact-summary-bar > :is(div, button) > div:first-of-type > span:nth-of-type(n+2) {
+  display: none;
+}
+.compact-summary-bar > :is(div, button) > div:nth-of-type(2) {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+/* Center each icon-label-count group inside its top-bar box. */
+.uniform-top-tabs > button,
+.compact-summary-bar > :is(div, button) {
+  grid-template-columns: 14px auto auto;
+  justify-content: center;
+}
+.uniform-top-tabs > button > span:nth-of-type(2),
+.compact-summary-bar > :is(div, button) > div:nth-of-type(2) {
+  justify-self: center;
+}
+
+.dashboard-drone-image[src$="/dji-matrice-4.png"] {
+  width: 50.4%;
+  height: 38.88%;
+}
+
+.dashboard-available-label {
+  animation: var(--animate-pulse);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-available-label { animation: none; }
+}
+
+:root {
+  color-scheme: dark;
+  --app-slate-50: #F8F9FB;
+  --app-slate-100: #F3F4F6;
+  --app-slate-200: #DFE3EA;
+  --app-slate-300: #C4CBD5;
+  --app-slate-400: #A8B0BC;
+  --app-slate-500: #919BAA;
+  --app-slate-600: #737F90;
+  --app-slate-700: #454E5C;
+  --app-slate-800: #343A43;
+  --app-slate-850: #22262B;
+  --app-slate-900: #191C20;
+  --app-slate-950: #111315;
+  --fleet-available-text: #4ADE80;
+}
+:root[data-display-mode="light"] {
+  color-scheme: light;
+  --app-slate-50: #0F172A;
+  --app-slate-100: #172033;
+  --app-slate-200: #243247;
+  --app-slate-300: #334155;
+  --app-slate-400: #475569;
+  --app-slate-500: #64748B;
+  --app-slate-600: #7C8CA1;
+  --app-slate-700: #B8C4D3;
+  --app-slate-800: #D8E0EA;
+  --app-slate-850: #EAF0F6;
+  --app-slate-900: #FFFDFA;
+  --app-slate-950: #F3F6FA;
+  --app-accent-300: #2563EB;
+  --app-accent-400: #2563EB;
+  --app-success-300: #166534;
+  --app-success-400: #15803D;
+  --app-warning-300: #6D28D9;
+  --app-warning-400: #6D28D9;
+  --app-error-300: #6D28D9;
+  --app-error-400: #6D28D9;
+  --fleet-available-text: #15803D;
+  --app-missing-300: #334155;
+  --app-missing-400: #475569;
+  --app-missing-900: #E2E8F0;
+  --app-missing-950: #F1F5F9;
+}
+
+/* Light status surfaces pair with dark labels/icons rather than dark-mode fills. */
+:root[data-display-mode="light"] {
+  --app-accent-900: #DBEAFE;
+  --app-accent-950: #EFF6FF;
+  --app-success-800: #86EFAC;
+  --app-success-900: #DCFCE7;
+  --app-success-950: #ECFDF5;
+  --app-warning-900: #EDE9FE;
+  --app-warning-950: #F5F3FF;
+  --app-error-900: #EDE9FE;
+  --app-error-950: #F5F3FF;
+}
+:root[data-display-mode="light"] .dashboard-drone-active {
+  border-color: rgb(21 128 61 / 35%);
+  background: #DCFCE7;
+}
+
+/* Warm ivory light mode with off-white panels. */
+:root[data-display-mode="light"] {
+  --app-slate-700: #BBAF9F;
+  --app-slate-800: #DED6CA;
+  --app-slate-850: #EEE8DF;
+  --app-slate-900: #FFFFFF;
+  --app-slate-950: #F5F2EC;
+  --app-accent-900: #DCE6F2;
+  --app-accent-950: #EDF2F8;
+  --app-success-900: #D9E9DD;
+  --app-success-950: #EDF4EC;
+  --app-warning-900: #E6DEF1;
+  --app-warning-950: #F3EFF7;
+  --app-error-900: #E6DEF1;
+  --app-error-950: #F3EFF7;
+}
+:root[data-display-mode="light"] .dashboard-drone-active {
+  background: #D9E9DD;
+}
+
+
+/* Match the fleet title's 80% page tint over its panel surface. */
+:root[data-display-mode="light"] .app-sidebar,
+:root[data-display-mode="light"] .app-topbar {
+  background-color: color-mix(in srgb, var(--app-slate-950) 80%, var(--app-slate-900) 20%);
+}
+
+/* Light chrome controls remain distinct from the fleet-title-colored shell. */
+:root[data-display-mode="light"] :is(.app-sidebar, .app-topbar) :is(
+  [class~="bg-slate-950/60"],
+  [class~="bg-slate-950/70"],
+  [class~="bg-slate-950/80"],
+  [class~="bg-slate-900"]
+) {
+  background-color: var(--app-slate-900);
+}
+
+@media (max-width: 767px) {
+  .dashboard-drone-cell { min-height: 240px; }
+  .dashboard-drone-active { top: calc(65% - 40px); }
+  .dashboard-drone-details { gap: 4px; }
+  .dashboard-recent-panel { height: auto !important; }
+  .dashboard-recent-rows { min-height: 504px; grid-template-rows: repeat(7, minmax(72px, 1fr)); }
+  .dashboard-recent-row {
+    grid-template-columns: 32px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    row-gap: 3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .dashboard-recent-row > span:first-child { grid-column: 1; grid-row: 1 / span 2; }
+  .dashboard-recent-row > span:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .dashboard-recent-row .dashboard-recent-origin {
+    grid-column: 2; grid-row: 2; padding-left: 0; align-self: start;
+  }
+  .dashboard-recent-origin > span { overflow: hidden; text-overflow: ellipsis; }
+  .dashboard-recent-divider { display: none; }
+}
+
+/* Keep phone text sizing stable and prevent automatic zoom when focusing fields. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* Theme switches are instant, including controls with hover color transitions. */
+html.theme-switch-instant,
+html.theme-switch-instant *,
+html.theme-switch-instant *::before,
+html.theme-switch-instant *::after {
+  transition: none !important;
+}
+
+/* Neutral white and gray reference palette, with purple alert/pending accents. */
+:root[data-display-mode="light"] {
+  --app-slate-50: #171918;
+  --app-slate-100: #202322;
+  --app-slate-200: #303432;
+  --app-slate-300: #4C514E;
+  --app-slate-400: #646A66;
+  --app-slate-500: #7B817D;
+  --app-slate-600: #959A96;
+  --app-slate-700: #C5C8C4;
+  --app-slate-800: #E2E3DF;
+  --app-slate-850: #ECEDE9;
+  --app-slate-900: #FFFFFF;
+  --app-slate-950: #F4F4F1;
+  --app-accent-300: #343A37;
+  --app-accent-400: #303633;
+  --app-accent-500: #424844;
+  --app-accent-600: #303633;
+  --app-accent-700: #252A27;
+  --app-accent-800: #CACDCA;
+  --app-accent-900: #E8EAE6;
+  --app-accent-950: #F1F2EF;
+  --app-warning-300: #6D28D9;
+  --app-warning-400: #6D28D9;
+  --app-warning-800: #C4B5FD;
+  --app-warning-900: #E6DEF1;
+  --app-warning-950: #F3EFF7;
+  --app-error-300: #6D28D9;
+  --app-error-400: #6D28D9;
+  --app-error-800: #C4B5FD;
+  --app-error-900: #E6DEF1;
+  --app-error-950: #F3EFF7;
+  --app-success-300: #16634B;
+  --app-success-400: #187452;
+  --app-success-800: #A8D3BF;
+  --app-success-900: #E0EFE7;
+  --app-success-950: #EFF6F2;
+  --fleet-available-text: #187452;
+}
+:root[data-display-mode="light"] .app-sidebar {
+  background-color: #F2F2EF;
+}
+:root[data-display-mode="light"] .app-topbar {
+  background-color: #FFFFFF;
+}
+:root[data-display-mode="light"] .dashboard-drone-active {
+  background: #E0EFE7;
+  border-color: #A8D3BF;
+}
+:root[data-display-mode="light"] [class~="bg-[#173E76]"] {
+  background-color: #303633;
+}
+
+/* Stronger outer outlines for the three dashboard panels. */
+section[aria-labelledby="drone-status-title"],
+section[aria-labelledby="flight-analytics-title"],
+section[aria-labelledby="recent-documents-title"] {
+  border-width: 3px;
+}
+
+/* Match the fleet title divider to the panel outline and rounded top corners. */
+.dashboard-drone-header {
+  border-bottom: 3px solid var(--color-slate-800);
+  /* The panel clips its own corners; a second radius leaves pale gaps. */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Downturned divider ends follow the rounded upper corners of the grid. */
+.dashboard-drone-header::before,
+.dashboard-drone-header::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 8px;
+  height: 8px;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at bottom right, transparent 6px, var(--color-slate-800) 6px, var(--color-slate-800) 8px, var(--color-slate-900) 8px);
+}
+.dashboard-drone-header::before { left: 0; }
+.dashboard-drone-header::after { right: 0; transform: scaleX(-1); }
+
+/* The fleet title surface and curved divider use one continuous color. */
+.dashboard-drone-header {
+  background-color: var(--color-slate-800);
+}
+.dashboard-drone-header::before,
+.dashboard-drone-header::after {
+  background: radial-gradient(circle at bottom right, transparent 6px, var(--color-slate-800) 6px);
+}
+
+/* Full quarter-circle cutouts meet the side outlines tangentially on both sides. */
+.dashboard-drone-header::before,
+.dashboard-drone-header::after {
+  bottom: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at bottom right, transparent 11.5px, var(--color-slate-800) 12px);
+}
+
+/* Consistent three-pixel lines throughout the dashboard panels. */
+.dashboard-drone-grid { gap: 3px; }
+.dashboard-recent-divider { width: 3px; }
+:is(section[aria-labelledby="drone-status-title"], section[aria-labelledby="flight-analytics-title"], section[aria-labelledby="recent-documents-title"]) [class~="border"] {
+  border-width: 3px;
+}
+:is(section[aria-labelledby="drone-status-title"], section[aria-labelledby="flight-analytics-title"], section[aria-labelledby="recent-documents-title"]) [class~="border-t"] {
+  border-top-width: 3px;
+}
+:is(section[aria-labelledby="drone-status-title"], section[aria-labelledby="flight-analytics-title"], section[aria-labelledby="recent-documents-title"]) [class~="border-b"] {
+  border-bottom-width: 3px;
+}
+.dashboard-drone-active { border-width: 3px; }
+
+/* Match the light sidebar to the Fleet Overview title only. */
+:root[data-display-mode="light"] .app-sidebar {
+  background-color: var(--color-slate-800);
+}
+
+/* Light pages share the top bar's white surface. */
+:root[data-display-mode="light"] .app-page-content {
+  background-color: var(--color-slate-900);
+}
+
+/* Preserve the original dark header surface; color matching belongs to light mode. */
+:root:not([data-display-mode="light"]) .dashboard-drone-header {
+  background-color: color-mix(in srgb, var(--color-slate-950) 80%, transparent);
+}
+:root:not([data-display-mode="light"]) .dashboard-drone-header::before,
+:root:not([data-display-mode="light"]) .dashboard-drone-header::after {
+  background: radial-gradient(circle at bottom right, transparent 9px, var(--color-slate-800) 9px, var(--color-slate-800) 12px, color-mix(in srgb, var(--color-slate-950) 80%, var(--color-slate-900)) 12px);
+}
+
+/* Original dark-mode line weights; thicker outlines remain light-mode only. */
+:root:not([data-display-mode="light"]) :is(
+  section[aria-labelledby="drone-status-title"],
+  section[aria-labelledby="flight-analytics-title"],
+  section[aria-labelledby="recent-documents-title"]
+),
+:root:not([data-display-mode="light"]) :is(
+  section[aria-labelledby="drone-status-title"],
+  section[aria-labelledby="flight-analytics-title"],
+  section[aria-labelledby="recent-documents-title"]
+) [class~="border"],
+:root:not([data-display-mode="light"]) .dashboard-drone-active {
+  border-width: 1px;
+}
+:root:not([data-display-mode="light"]) :is(
+  section[aria-labelledby="drone-status-title"],
+  section[aria-labelledby="flight-analytics-title"],
+  section[aria-labelledby="recent-documents-title"]
+) [class~="border-t"] { border-top-width: 1px; }
+:root:not([data-display-mode="light"]) :is(
+  section[aria-labelledby="drone-status-title"],
+  section[aria-labelledby="flight-analytics-title"],
+  section[aria-labelledby="recent-documents-title"]
+) [class~="border-b"] { border-bottom-width: 1px; }
+:root:not([data-display-mode="light"]) .dashboard-drone-grid { gap: 1px; }
+:root:not([data-display-mode="light"]) .dashboard-recent-divider { width: 1px; }
+:root:not([data-display-mode="light"]) .dashboard-drone-header { border-bottom-width: 0; }
+:root:not([data-display-mode="light"]) .dashboard-drone-header::before,
+:root:not([data-display-mode="light"]) .dashboard-drone-header::after { content: none; }
+
+/* A distinct rounded outline for global search in light mode only. */
+:root[data-display-mode="light"] .dashboard-drone-header input[type="search"] {
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: color-mix(in oklab, var(--color-sky-500) 30%, transparent);
+}
+
+/* Breadcrumbs belong to the light-mode top bar. */
+.app-breadcrumb { display: none; }
+:root[data-display-mode="light"] .app-breadcrumb { display: flex; }
+@media (max-width: 639px) {
+  :root[data-display-mode="light"] .app-breadcrumb { font-size: 10px; gap: 4px; }
+}
+
+
+/* Center the larger brand between equal side gutters in both modes. */
+.sidebar-brand { padding-left: 12px; padding-right: 12px; position: relative; }
+.sidebar-brand > div { width: 100%; gap: 10px; min-width: 0; justify-content: center; }
+.sidebar-brand-logo { width: 44px; height: 44px; }
+.sidebar-brand-logo svg { width: 26px; height: 26px; }
+.sidebar-brand > div > div:last-child { flex: 1; min-width: 0; }
+.sidebar-brand-name { font-size: 16px; line-height: 18px; }
+.sidebar-brand > button { position: absolute; right: 3px; top: 2px; }
+
+/* Updated menu heading in light mode only. */
+.sidebar-menu-heading-light { display: none; }
+:root[data-display-mode="light"] .sidebar-menu-heading-dark { display: none; }
+:root[data-display-mode="light"] .sidebar-menu-heading-light { display: inline; font-size: 12px; }
+/* Fleet title colors and curved lower corners on table column headings only. */
+:root[data-display-mode="light"] .operations-column-header {
+  background-color: var(--color-slate-800);
+  border-bottom: 3px solid var(--color-slate-800);
+}
+:root[data-display-mode="light"] .operations-column-header th {
+  position: relative;
+  background-color: var(--color-slate-800);
+  border-bottom: 3px solid var(--color-slate-800);
+}
+:root[data-display-mode="light"] .operations-column-header th:first-child::after,
+:root[data-display-mode="light"] .operations-column-header th:last-child::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at bottom right, transparent 11.5px, var(--color-slate-800) 12px);
+}
+:root[data-display-mode="light"] .operations-column-header th:first-child::after { left: 0; }
+:root[data-display-mode="light"] .operations-column-header th:last-child::after { right: 0; transform: scaleX(-1); }
+
+/* Three-pixel outer page panels, without widening nested controls or dividers. */
+:root[data-display-mode="light"] .app-page-content :is(div, section)[class~="border"][class~="bg-slate-900"]:is(
+  [class~="rounded-lg"], [class~="rounded-xl"], [class~="rounded-2xl"]
+):not(.app-page-content [class~="border"] *):not(.fixed *),
+:root[data-display-mode="light"] .app-page-content .compact-summary-bar {
+  border-width: 3px;
+}
+
+/* Full-height adjoining Inventory navigation segments in light mode. */
+:root[data-display-mode="light"] .inventory-page-navigation {
+  padding: 0;
+  overflow-y: hidden;
+}
+:root[data-display-mode="light"] .inventory-page-navigation .uniform-top-tabs {
+  height: 100%;
+  gap: 0;
+}
+:root[data-display-mode="light"] .inventory-page-navigation .uniform-top-tabs > button {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+:root[data-display-mode="light"] .inventory-page-navigation .uniform-top-tabs > button + button {
+  border-left: 1px solid var(--color-slate-800);
+}
+:root[data-display-mode="light"] .inventory-page-navigation .uniform-top-tabs > button[class~="bg-slate-800"] {
+  background-color: var(--color-slate-800);
+}
+
+/* Adjoining full-height navigation segments across the other light menu bars. */
+:root[data-display-mode="light"] .uniform-top-tabs[role="tablist"],
+:root[data-display-mode="light"] .compact-summary-bar {
+  padding: 0;
+  gap: 0;
+  min-height: 50px;
+  overflow: hidden;
+  align-items: stretch;
+}
+:root[data-display-mode="light"] .uniform-top-tabs[role="tablist"] > button,
+:root[data-display-mode="light"] .compact-summary-bar > :is(div, button) {
+  height: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+:root[data-display-mode="light"] .uniform-top-tabs[role="tablist"] > button + button,
+:root[data-display-mode="light"] .compact-summary-bar > :is(div, button) + :is(div, button) {
+  border-left: 1px solid var(--color-slate-800);
+}
+:root[data-display-mode="light"] .uniform-top-tabs[role="tablist"] > button[aria-selected="true"],
+:root[data-display-mode="light"] .compact-summary-bar > :is(div, button):is(
+  [class~="shadow-xs"], [class~="bg-sky-950/40"], [class~="bg-emerald-950/40"], [class~="bg-amber-950/40"]
+) {
+  background-color: var(--color-slate-800);
+}
+
+/* Match Inventory filter panels to the other Operations bars in both modes. */
+:root .inventory-filter-controls {
+  height: auto !important;
+  min-height: 70px;
+  padding: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+:root .inventory-filter-controls > .flex {
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Thirty-percent larger dashboard titles in both modes (14px to 18.2px). */
+:root :is(#drone-status-title, #flight-analytics-title, #recent-documents-title) {
+  font-size: 18.2px;
+  line-height: 1.4;
+}
+
+/* One continuous header surface, with lower curves meeting the panel sides. */
+.flight-panel-title {
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+}
+:root[data-display-mode="light"] .flight-panel-title {
+  background-color: var(--color-slate-800);
+}
+:root[data-display-mode="light"] .flight-panel-title::before,
+:root[data-display-mode="light"] .flight-panel-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  background: radial-gradient(circle at bottom right, transparent 11.5px, var(--color-slate-800) 12px);
+}
+:root[data-display-mode="light"] .flight-panel-title::before { left: 0; }
+:root[data-display-mode="light"] .flight-panel-title::after { right: 0; transform: scaleX(-1); }
+
+/* Keep both adjoining flight title bars at the same exact height. */
+:root .flight-panel-title {
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  flex: 0 0 30px;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+/* Equal outlines keep adjacent title bars aligned from their top edges. */
+:root .app-page-content section.flight-detail-panel {
+  box-sizing: border-box;
+  border-width: 1px;
+}
+:root[data-display-mode="light"] .app-page-content section.flight-detail-panel {
+  border-width: 3px;
+}
+:root .app-page-content section.flight-detail-panel.border-l-0 {
+  border-left-width: 0;
+}
+
+/* Indeterminate flight loading, independent of theme color transitions. */
+@keyframes flight-route-loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+.flight-route-loading-bar {
+  animation: flight-route-loading 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flight-route-loading-bar { animation: none; width: 100%; }
+}
+
+/* Shared dashboard title height, including the divider in both display modes. */
+.dashboard-drone-header {
+  box-sizing: border-box;
+  height: 63px;
+  min-height: 63px;
+  max-height: 63px;
+  flex-shrink: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Reveal the charts at a fixed width while the map smoothly changes size. */
+.flight-telemetry-slide {
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: flex-basis 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flight-telemetry-slide { transition: none; }
+}
+
+/* Uniform green success styling is confined to light mode. */
+:root[data-display-mode="light"] {
+  --app-success-50: #E0EFE7;
+  --app-success-100: #E0EFE7;
+  --app-success-200: #CDE5D8;
+  --app-success-300: #187452;
+  --app-success-400: #187452;
+  --app-success-500: #187452;
+  --app-success-600: #187452;
+  --app-success-700: #187452;
+  --app-success-800: #187452;
+  --app-success-900: #E0EFE7;
+  --app-success-950: #E0EFE7;
+  --fleet-available-text: #187452;
+  --flight-home-color: #187452;
+  --flight-green-chart: #187452;
+  --flight-teal-chart: #187452;
+  --flight-emerald-chart: #187452;
+  --flight-lime-chart: #187452;
+  --color-lime-50: var(--app-success-50);
+  --color-lime-100: var(--app-success-100);
+  --color-lime-200: var(--app-success-200);
+  --color-lime-300: var(--app-success-300);
+  --color-lime-400: var(--app-success-400);
+  --color-lime-500: var(--app-success-500);
+  --color-lime-600: var(--app-success-600);
+  --color-lime-700: var(--app-success-700);
+  --color-lime-800: var(--app-success-800);
+  --color-lime-900: var(--app-success-900);
+  --color-lime-950: var(--app-success-950);
+}
+:root[data-display-mode="light"] .dashboard-drone-active {
+  color: #187452;
+  background: #E0EFE7;
+  border-color: #187452;
+}
+:root[data-display-mode="light"] .dashboard-drone-active:hover {
+  background: #CDE5D8;
+}
+:root[data-display-mode="light"] :is(
+  [class~="bg-emerald-300"],
+  [class~="bg-emerald-400"],
+  [class~="bg-emerald-500"],
+  [class~="bg-emerald-600"],
+  [class~="bg-emerald-700"],
+  [class~="bg-emerald-800"],
+  [class~="bg-green-300"],
+  [class~="bg-green-400"],
+  [class~="bg-green-500"],
+  [class~="bg-green-600"],
+  [class~="bg-green-700"],
+  [class~="bg-green-800"],
+  [class~="bg-teal-300"],
+  [class~="bg-teal-400"],
+  [class~="bg-teal-500"],
+  [class~="bg-teal-600"],
+  [class~="bg-teal-700"],
+  [class~="bg-teal-800"],
+  [class~="bg-lime-300"],
+  [class~="bg-lime-400"],
+  [class~="bg-lime-500"],
+  [class~="bg-lime-600"],
+  [class~="bg-lime-700"],
+  [class~="bg-lime-800"]
+) {
+  background-color: #187452;
+  color: #FFFFFF;
+}
+:root[data-display-mode="light"] :is(
+  [class~="border-emerald-100"],
+  [class~="border-emerald-200"],
+  [class~="border-emerald-300"],
+  [class~="border-emerald-400"],
+  [class~="border-emerald-500"],
+  [class~="border-emerald-600"],
+  [class~="border-emerald-700"],
+  [class~="border-emerald-800"],
+  [class~="border-emerald-900"],
+  [class~="border-emerald-950"],
+  [class~="border-green-100"],
+  [class~="border-green-200"],
+  [class~="border-green-300"],
+  [class~="border-green-400"],
+  [class~="border-green-500"],
+  [class~="border-green-600"],
+  [class~="border-green-700"],
+  [class~="border-green-800"],
+  [class~="border-green-900"],
+  [class~="border-green-950"],
+  [class~="border-teal-100"],
+  [class~="border-teal-200"],
+  [class~="border-teal-300"],
+  [class~="border-teal-400"],
+  [class~="border-teal-500"],
+  [class~="border-teal-600"],
+  [class~="border-teal-700"],
+  [class~="border-teal-800"],
+  [class~="border-teal-900"],
+  [class~="border-teal-950"],
+  [class~="border-lime-100"],
+  [class~="border-lime-200"],
+  [class~="border-lime-300"],
+  [class~="border-lime-400"],
+  [class~="border-lime-500"],
+  [class~="border-lime-600"],
+  [class~="border-lime-700"],
+  [class~="border-lime-800"],
+  [class~="border-lime-900"],
+  [class~="border-lime-950"]
+) {
+  border-color: #187452;
+}
+
+/* Invert dashboard availability badges in light mode. */
+:root[data-display-mode="light"] .dashboard-drone-active {
+  color: #FFFFFF;
+  background-color: #187452;
+  border-color: #187452;
+}
+:root[data-display-mode="light"] .dashboard-drone-active:hover {
+  color: #FFFFFF;
+  background-color: #187452;
+}
+
+/* Static availability labels in light mode. */
+:root[data-display-mode="light"] .dashboard-available-label { animation: none; }
+
+/* Battery column headings share the light-mode table-header surface. */
+:root[data-display-mode="light"] .battery-column-header,
+:root[data-display-mode="light"] .battery-column-header th {
+  background-color: var(--color-slate-800);
+}
+
+/* Streaming and accessory columns use the same light-mode header surface. */
+:root[data-display-mode="light"] .inventory-column-header,
+:root[data-display-mode="light"] .inventory-column-header th {
+  background-color: var(--color-slate-800);
+}
+
+/* One continuous rounded inventory heading across all asset tables. */
+:root[data-display-mode="light"] .inventory-table-panel {
+  border-radius: 12px;
+  overflow: hidden;
+}
+:root[data-display-mode="light"] .inventory-column-header,
+:root[data-display-mode="light"] .inventory-column-header th {
+  background-color: var(--color-slate-800);
+  border-bottom: 3px solid var(--color-slate-800);
+}
+
+/* Smooth inventory and user header ends join the panel side borders. */
+:root[data-display-mode="light"] .inventory-column-header th,
+:root[data-display-mode="light"] div.inventory-column-header {
+  position: relative;
+}
+:root[data-display-mode="light"] .inventory-column-header th:first-child::after,
+:root[data-display-mode="light"] .inventory-column-header th:last-child::after,
+:root[data-display-mode="light"] div.inventory-column-header::before,
+:root[data-display-mode="light"] div.inventory-column-header::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at bottom right, transparent 11.5px, var(--color-slate-800) 12px);
+}
+:root[data-display-mode="light"] .inventory-column-header th:first-child::after,
+:root[data-display-mode="light"] div.inventory-column-header::before { left: 0; }
+:root[data-display-mode="light"] .inventory-column-header th:last-child::after,
+:root[data-display-mode="light"] div.inventory-column-header::after { right: 0; transform: scaleX(-1); }
+
+/* Identical light-mode header dimensions for inventory and user management. */
+:root[data-display-mode="light"] .inventory-column-header,
+:root[data-display-mode="light"] .inventory-column-header > tr,
+:root[data-display-mode="light"] .inventory-column-header th {
+  background-color: var(--color-slate-800);
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 11px;
+  line-height: 16px;
+}
+:root[data-display-mode="light"] .inventory-column-header th {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: middle;
+}
+:root[data-display-mode="light"] div.inventory-column-header {
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+:root[data-display-mode="light"] .permissions-header-controls {
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+:root[data-display-mode="light"] .permissions-header-controls > button {
+  height: 28px;
+  padding: 3px 6px;
+}
+:root[data-display-mode="light"] .permissions-header-actions { margin-top: 0; }
+
+/* Shared header typography matches the flight-filter dropdown labels. */
+:root .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]) :is(h2, h3),
+:root .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]) thead,
+:root .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]) thead :is(th, button),
+:root .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]) div.inventory-column-header,
+:root .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]) div.inventory-column-header > span {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 16px !important;
+  text-transform: uppercase !important;
+  letter-spacing: normal;
+}
+
+/* Shared official document styling for screen previews and printed forms. */
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) {
+  --official-rule: #6b1119;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  color: #0f172a;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .font-sans {
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) :is(input, textarea, .font-mono) {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) :is(table, th, td, .border-black, [class*="border-[#6b1119]"], [class*="border-[#520b13]"]) {
+  border-color: var(--official-rule);
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) [class*="divide-black"] > :not(:last-child),
+:is(#printable-confiscated-sheet, #printable-correspondence-sheet) [class~="divide-x-2"] > :not(:last-child) {
+  border-color: var(--official-rule);
+  border-width: 0;
+  border-right-width: 1px;
+}
+:is(#printable-confiscated-sheet, #printable-correspondence-sheet) .border-2 {
+  border-width: 1px;
+}
+:is(#printable-confiscated-sheet, #printable-correspondence-sheet) .border-t-2 {
+  border-top-width: 1px;
+}
+.official-report-title {
+  background: #6b1119;
+  color: white;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 16px;
+  border: 1px solid #6b1119;
+  border-radius: 0;
+}
+.official-report-title h1 { font-size: inherit; font-weight: inherit; }:is(#printable-confiscated-sheet, #printable-correspondence-sheet) [class~="divide-y-2"] > :not(:last-child) {
+  border-color: var(--official-rule);
+  border-bottom-width: 1px;
+}
+@media (min-width: 640px) {
+  :is(#printable-confiscated-sheet, #printable-correspondence-sheet) [class~="sm:divide-x-2"] > :not(:last-child) {
+    border-color: var(--official-rule);
+    border-bottom-width: 0;
+    border-right-width: 1px;
+  }
+}
+/* Preserve the original handover preview typography. */
+#printable-handover-sheet :is(input, textarea, .font-sans) {
+  font-family: inherit;
+}
+
+/* Theme only the raster map tiles, keeping flight routes and markers intact.
+   Reuses the existing provider and works with cached tiles without a reload. */
+:root:not([data-display-mode="light"]) .flight-map-tile {
+  filter: invert(1) hue-rotate(180deg) saturate(0.65) brightness(0.85) contrast(0.9);
+}
+:root:not([data-display-mode="light"]) .flight-map-attribution {
+  background: var(--app-slate-950);
+  color: var(--app-slate-300);
+}
+
+/* A thin full-width divider casts a soft fade over the column header. */
+.drone-flight-title-divider {
+  position: relative;
+  z-index: 1;
+}
+.drone-flight-title-divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 8px;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 14%), transparent);
+  pointer-events: none;
+}
+:root[data-display-mode="light"] .drone-flight-title-divider {
+  border-bottom-color: var(--color-slate-700);
+}
+:root[data-display-mode="light"] .drone-flight-title-divider::after {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 9%), transparent);
+}
+
+
+/* ChatGPT-inspired neutral desktop palette; light mode keeps its own tokens. */
+@media screen {
+  :root:not([data-display-mode="light"]) {
+    --app-dark-surface: rgb(30 30 30 / 88%);
+    --app-slate-50: #F9F9F9;
+    --app-slate-100: #ECECEC;
+    --app-slate-200: #DCDCDC;
+    --app-slate-300: #C8C8C8;
+    --app-slate-400: #B4B4B4;
+    --app-slate-500: #949494;
+    --app-slate-600: #767676;
+    --app-slate-700: #424242;
+    --app-slate-800: #303030;
+    --app-slate-850: #262626;
+    --app-slate-900: #262626;
+    --app-slate-950: #212121;
+    --app-accent-50: #FAFAFA;
+    --app-accent-100: #F4F4F4;
+    --app-accent-200: #E4E4E4;
+    --app-accent-300: #DCDCDC;
+    --app-accent-400: #ECECEC;
+    --app-accent-500: #DCDCDC;
+    --app-accent-600: #424242;
+    --app-accent-700: #505050;
+    --app-accent-800: #595959;
+    --app-accent-900: #303030;
+    --app-accent-950: #262626;
+  --app-success-50: #F0FDF4;
+  --app-success-100: #DCFCE7;
+  --app-success-200: #BBF7D0;
+  --app-success-300: #86EFAC;
+  --app-success-400: #4ADE80;
+  --app-success-500: #4ADE80;
+  --app-success-600: #22C55E;
+  --app-success-700: #15803D;
+  --app-success-800: #166534;
+  --app-success-900: #14532D;
+  --app-success-950: #0C2D1A;
+  --app-warning-50: #F5F3FF;
+  --app-warning-100: #EDE9FE;
+  --app-warning-200: #DDD6FE;
+  --app-warning-300: #D8CCFF;
+  --app-warning-400: #C4B5FD;
+  --app-warning-500: #8B5CF6;
+  --app-warning-600: #8B5CF6;
+  --app-warning-700: #7C3AED;
+  --app-warning-800: #8B5CF6;
+  --app-warning-900: #32234C;
+  --app-warning-950: #251B3B;
+  --app-error-50: #F5F3FF;
+  --app-error-100: #EDE9FE;
+  --app-error-200: #DDD6FE;
+  --app-error-300: #D8CCFF;
+  --app-error-400: #C4B5FD;
+  --app-error-500: #8B5CF6;
+  --app-error-600: #8B5CF6;
+  --app-error-700: #7C3AED;
+  --app-error-800: #8B5CF6;
+  --app-error-900: #32234C;
+  --app-error-950: #251B3B;
+  --app-missing-50: #FFFFFF;
+  --app-missing-100: #FFFFFF;
+  --app-missing-200: #FFFFFF;
+  --app-missing-300: #FFFFFF;
+  --app-missing-400: #FFFFFF;
+  --app-missing-500: #FFFFFF;
+  --app-missing-600: #D1D5DB;
+  --app-missing-700: #9CA3AF;
+  --app-missing-800: #4B5563;
+  --app-missing-900: #343A43;
+  --app-missing-950: #24282E;
+  }
+  :root:not([data-display-mode="light"]) .app-sidebar {
+    background-color: #212121;
+  }
+  :root:not([data-display-mode="light"]) :is(.app-topbar, .app-page-content) {
+    background-color: var(--app-slate-950);
+  }
+  :root:not([data-display-mode="light"]) :is(.dashboard-drone-header, .flight-panel-title) {
+    background-color: var(--app-slate-800);
+  }
+
+  :root:not([data-display-mode="light"]) :is(button, a, [role="button"]):is(
+    [class~="bg-sky-600"], [class~="bg-blue-600"], [class~="bg-cyan-600"], [class~="bg-indigo-600"],
+    [class~="bg-sky-700"], [class~="bg-blue-700"], [class~="bg-cyan-700"], [class~="bg-indigo-700"]
+  ) { color: #ECECEC; }
+  :root:not([data-display-mode="light"]) :is(button, a, [role="button"]):is(
+    [class~="hover:bg-sky-600"], [class~="hover:bg-blue-600"], [class~="hover:bg-cyan-600"], [class~="hover:bg-indigo-600"],
+    [class~="hover:bg-sky-700"], [class~="hover:bg-blue-700"], [class~="hover:bg-cyan-700"], [class~="hover:bg-indigo-700"]
+  ):hover { color: #ECECEC; }
+  /* Filled accent controls use dark text on pale fills, including hover states. */
+  :root:not([data-display-mode="light"]) :is(button, a, [role="button"]):is(
+    [class~="bg-sky-500"], [class~="bg-blue-500"], [class~="bg-cyan-500"], [class~="bg-indigo-500"]
+  ),
+  :root:not([data-display-mode="light"]) :is(button, a, [role="button"]):is(
+    [class~="hover:bg-sky-500"], [class~="hover:bg-blue-500"], [class~="hover:bg-cyan-500"], [class~="hover:bg-indigo-500"]
+  ):hover {
+    color: #212121;
+  }
+  :root:not([data-display-mode="light"]) [class~="bg-[#173E76]"] {
+    background-color: var(--app-slate-700);
+  }
+}
+
+/* Darker dashboard canvas and nested panels; other pages retain charcoal. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] {
+    --app-slate-900: var(--app-dark-surface);
+    --app-slate-950: var(--app-dark-surface);
+    background-color: var(--app-dark-surface);
+  }
+}
+
+/* Dashboard title bars share the darker surface in dark mode only. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-header {
+    background-color: var(--app-dark-surface);
+  }
+}
+
+/* Match the application top bar to the darker dark-mode surface. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-topbar {
+    background-color: rgb(24 24 24 / 88%);
+  }
+}
+
+/* Match Flight Data & Analytics to the darker dashboard palette. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="FLIGHT_DATA"] {
+    --app-slate-900: var(--app-dark-surface);
+    --app-slate-950: var(--app-dark-surface);
+    background-color: var(--app-dark-surface);
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="FLIGHT_DATA"] :is(
+    .flight-panel-title,
+    .dashboard-drone-header,
+    section > div[class~="h-[50px]"][class~="bg-slate-800"]
+  ) {
+    background-color: var(--app-dark-surface);
+  }
+}
+
+
+/* Match tile and title appearance by compositing each translucent fill
+   against the panel, rather than the grid's lighter divider surface. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-grid {
+    background-color: transparent;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-cell {
+    background-color: var(--app-dark-surface);
+    outline: 1px solid var(--app-slate-800);
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button,
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button:hover {
+    background-color: transparent;
+  }
+}
+
+
+/* Minimal darkening of the translucent gray across both requested pages. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content:is(
+    [data-active-page="DASHBOARD"],
+    [data-active-page="FLIGHT_DATA"]
+  ) {
+    --app-dark-surface: rgb(24 24 24 / 88%);
+  }
+}
+
+/* Slightly quieter neutral outlines on the two dark analytics pages.
+   Override border colors only, keeping text and filled surfaces unchanged. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content:is(
+    [data-active-page="DASHBOARD"], [data-active-page="FLIGHT_DATA"]
+  ) :is([class~="border-slate-800"], [class~="border-slate-800/50"]) {
+    border-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content:is(
+    [data-active-page="DASHBOARD"], [data-active-page="FLIGHT_DATA"]
+  ) [class~="border-slate-700"] {
+    border-color: #3B3B3B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content:is(
+    [data-active-page="DASHBOARD"], [data-active-page="FLIGHT_DATA"]
+  ) [class~="divide-slate-800"] > :not(:last-child) {
+    border-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-cell {
+    outline-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-recent-divider {
+    background-color: #2B2B2B;
+  }
+}
+
+/* A faint inward border glow on the outer dashboard and flight panels. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] :is(
+    section[aria-labelledby="drone-status-title"],
+    section[aria-labelledby="flight-analytics-title"],
+    section[aria-labelledby="recent-documents-title"]
+  ),
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="FLIGHT_DATA"] section[class~="border"]:not(section section) {
+    position: relative;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] :is(
+    section[aria-labelledby="drone-status-title"],
+    section[aria-labelledby="flight-analytics-title"],
+    section[aria-labelledby="recent-documents-title"]
+  )::after,
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="FLIGHT_DATA"] section[class~="border"]:not(section section)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: inset 0 0 14px 2px rgb(43 43 43 / 30%);
+  }
+}
+
+/* Inventory shares the dark dashboard surfaces, headers, and border fade. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] {
+    --app-dark-surface: rgb(24 24 24 / 88%);
+    --app-slate-900: var(--app-dark-surface);
+    --app-slate-950: var(--app-dark-surface);
+    background-color: var(--app-dark-surface);
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] :is(
+    .inventory-column-header, .battery-column-header, .operations-column-header,
+    .inventory-page-navigation
+  ) {
+    background-color: var(--app-dark-surface);
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] :is(
+    [class~="border-slate-800"], [class~="border-slate-800/50"]
+  ) {
+    border-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] [class~="border-slate-700"] {
+    border-color: #3B3B3B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] [class~="divide-slate-800"] > :not(:last-child) {
+    border-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] :is(div, section)[class~="border"][class~="bg-slate-900"]:not([class~="border"] *):not(.fixed *) {
+    position: relative;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="INVENTORY"] :is(div, section)[class~="border"][class~="bg-slate-900"]:not([class~="border"] *):not(.fixed *)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: inset 0 0 14px 2px rgb(43 43 43 / 30%);
+  }
+}
+
+/* Green foreground flight-count series for both shared charts in dark mode. */
+@media screen {
+  :root:not([data-display-mode="light"]) {
+    --flight-count-chart: #22A866;
+  }
+}
+
+/* Soft white halo behind the drone image on dark dashboard tiles. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button::before {
+    content: "";
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    width: 100%;
+    height: 48%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse closest-side at center, rgb(255 255 255 / 7%) 0%, rgb(255 255 255 / 5.5%) 12%, rgb(255 255 255 / 3.5%) 24%, rgb(255 255 255 / 1.5%) 40%, rgb(255 255 255 / 0.8%) 62%, rgb(255 255 255 / 0.3%) 80%, transparent 98%);
+    opacity: 0;
+    transition: opacity 280ms ease-out;
+    pointer-events: none;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button:focus-visible::before {
+    opacity: 1;
+  }
+}
+@media screen and (hover: hover) and (pointer: fine) {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-cell:hover .dashboard-drone-model-button::before {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-drone-model-button::before { transition: none; }
+}
+
+/* Shared smooth image zoom for dashboard tiles in both display modes. */
+@media screen {
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-image {
+    transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+  }
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button:focus-visible .dashboard-drone-image {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+@media screen and (hover: hover) and (pointer: fine) {
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-cell:hover .dashboard-drone-image {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-image,
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-cell:hover .dashboard-drone-image,
+  :root .app-page-content[data-active-page="DASHBOARD"] .dashboard-drone-model-button:focus-visible .dashboard-drone-image {
+    transition: none;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Every page shares the established translucent dark-gray canvas. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content {
+    background-color: rgb(24 24 24 / 88%);
+  }
+}
+
+/* Shared dark neutral borders across the remaining menu pages. */
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content :is(
+    [class~="border-slate-800"], [class~="border-slate-800/50"]
+  ) { border-color: #2B2B2B; }
+  :root:not([data-display-mode="light"]) .app-page-content [class~="border-slate-700"] {
+    border-color: #3B3B3B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content [class~="divide-slate-800"] > :not(:last-child) {
+    border-color: #2B2B2B;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]):not([data-active-page="INVENTORY"]) :is(div, section)[class~="border"][class~="bg-slate-900"]:not([class~="border"] *):not(.fixed *):not([id^="printable-"]):not([id^="printable-"] *) {
+    position: relative;
+  }
+  :root:not([data-display-mode="light"]) .app-page-content:not([data-active-page="DASHBOARD"]):not([data-active-page="FLIGHT_DATA"]):not([data-active-page="INVENTORY"]) :is(div, section)[class~="border"][class~="bg-slate-900"]:not([class~="border"] *):not(.fixed *):not([id^="printable-"]):not([id^="printable-"] *)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: inset 0 0 14px 2px rgb(43 43 43 / 30%);
+  }
+}
+
+/* Unified dark panel and header surfaces throughout the application. */
+@media screen {
+  :root:not([data-display-mode="light"]) :is(.app-page-content, [role="dialog"]) {
+    --app-dark-surface: rgb(24 24 24 / 88%);
+    --app-slate-900: var(--app-dark-surface);
+    --app-slate-950: var(--app-dark-surface);
+  }
+  :root:not([data-display-mode="light"]) :is(.app-page-content, [role="dialog"]) :is(
+    .dashboard-drone-header,
+    .flight-panel-title,
+    .inventory-column-header,
+    .battery-column-header,
+    .operations-column-header,
+    .inventory-page-navigation,
+    .compact-summary-bar,
+    thead,
+    header[class*="bg-slate-"],
+    :is(h2, h3)[class*="bg-slate-"],
+    div[class~="bg-slate-800"]:has(> :is(h2, h3)),
+    div[class~="bg-slate-950/80"]:has(> :is(h2, h3))
+  ):not([id^="printable-"] *):not(.official-report-title) {
+    background-color: var(--app-dark-surface);
+  }
+  :root:not([data-display-mode="light"]) :is(.app-page-content, [role="dialog"]) thead th[class*="bg-slate-"]:not([id^="printable-"] *) {
+    background-color: transparent;
+  }
+  :root:not([data-display-mode="light"]) [role="dialog"] :is(
+    [class~="border-slate-800"], [class~="border-slate-800/50"]
+  ) { border-color: #2B2B2B; }
+  :root:not([data-display-mode="light"]) [role="dialog"] [class~="border-slate-700"] {
+    border-color: #3B3B3B;
+  }
+}
+
+/* A bottom-aligned fleet tile footer keeps all labels below the image. */
+.dashboard-drone-footer {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.dashboard-drone-footer .dashboard-drone-name {
+  text-transform: uppercase;
+  font-size: clamp(12px, 1.4cqi, 17px);
+  line-height: 1.35;
+}
+.dashboard-drone-footer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.dashboard-drone-total {
+  padding: 6px 9px;
+  border: 1px solid var(--app-slate-700);
+  border-radius: 6px;
+  background-color: var(--app-slate-800);
+  color: var(--app-slate-300);
+  font-size: clamp(9px, 1cqi, 11px);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+:root .dashboard-drone-footer .dashboard-drone-active {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  background-color: #187452;
+  color: #FFFFFF;
+  font-size: clamp(9px, 1cqi, 11px);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: background-color 180ms ease-out;
+}
+:root .dashboard-drone-footer .dashboard-drone-active:hover {
+  background-color: #1B805B;
+  color: #FFFFFF;
+}
+.dashboard-drone-footer .dashboard-available-label { animation: none; }
+.dashboard-availability-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+.dashboard-availability-ratio { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) {
+  :root .dashboard-drone-footer .dashboard-drone-active { transition: none; }
+}
+
+/* Fill the footer's remaining width while preserving equal side insets. */
+:root .dashboard-drone-footer .dashboard-drone-active {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.dashboard-drone-footer .dashboard-availability-ratio {
+  margin-left: auto;
+}
+
+/* The muted track represents total inventory; green fill represents availability. */
+:root .dashboard-drone-footer .dashboard-drone-active,
+:root .dashboard-drone-footer .dashboard-drone-active:hover {
+  position: relative;
+  inset: auto;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #35473E;
+}
+:root .dashboard-drone-footer .dashboard-drone-active > .dashboard-availability-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: 100%;
+  background-color: #187452;
+  pointer-events: none;
+  transition: width 320ms ease-out, background-color 180ms ease-out;
+}
+.dashboard-drone-footer .dashboard-drone-active:hover .dashboard-availability-fill {
+  background-color: #1B805B;
+}
+.dashboard-drone-footer .dashboard-drone-active > span:not(.dashboard-availability-fill) {
+  position: relative;
+  z-index: 1;
+}
+.dashboard-drone-footer .dashboard-availability-total {
+  color: #C1CEC7;
+  font-weight: 500;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-drone-footer .dashboard-availability-fill { transition: none; }
+}
+
+/* Equal-width variant chips keep M30 and M30T availability bars aligned. */
+.dashboard-drone-variant-row .dashboard-drone-total {
+  flex: 0 0 72px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Model identifiers sit above the variant names within their existing chips. */
+.dashboard-drone-variant-row .dashboard-drone-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dashboard-drone-variant-model {
+  font-weight: 700;
+  color: var(--app-slate-100);
+}
+
+/* All tile labels share a fixed width and the availability bar height. */
+.dashboard-drone-footer-stats {
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+.dashboard-drone-footer-stats .dashboard-drone-total {
+  flex: 0 0 104px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+:root .dashboard-drone-footer-stats .dashboard-drone-active {
+  flex: 1 1 0;
+  align-items: center;
+}
+@container (max-width: 420px) {
+  .dashboard-drone-footer-stats .dashboard-drone-total {
+    flex-basis: 90px;
+    padding-left: 6px;
+    padding-right: 6px;
+    gap: 4px;
+  }
+  :root .dashboard-drone-footer-stats .dashboard-drone-active {
+    padding-left: 6px;
+    padding-right: 6px;
+    gap: 4px;
+  }
+}
+
+/* Video Playback adopts the shared neutral panel title surface. */
+.video-playback-title { background-color: var(--app-slate-800); }
+@media screen {
+  :root:not([data-display-mode="light"]) .app-page-content[data-active-page="VIDEO_PLAYBACK"] .video-playback-title {
+    background-color: var(--app-dark-surface);
+  }
+}
+
+/* Persistent sliding rails expand the playback area without shifting overlays. */
+.video-playback-workspace {
+  --video-left-width: 176px;
+  --video-right-width: 312px;
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  gap: 12px;
+}
+.video-playback-workspace[data-left-collapsed="true"] { --video-left-width: 32px; }
+.video-playback-workspace[data-right-collapsed="true"] { --video-right-width: 32px; }
+.video-playback-workspace[data-right-hidden="true"] { --video-right-width: 0px; }
+.video-playback-rail {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+  transition: flex-basis 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.video-playback-rail-left { flex-basis: var(--video-left-width); }
+.video-playback-rail-right { flex-basis: var(--video-right-width); }
+.video-playback-rail-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease;
+}
+.video-playback-rail-left .video-playback-rail-content { width: 144px; left: 0; }
+.video-playback-rail-right .video-playback-rail-content { width: 280px; right: 0; }
+.video-playback-workspace[data-left-collapsed="true"] .video-playback-rail-left .video-playback-rail-content { transform: translateX(-100%); opacity: 0; }
+.video-playback-workspace:is([data-right-collapsed="true"], [data-right-hidden="true"]) .video-playback-rail-right .video-playback-rail-content { transform: translateX(100%); opacity: 0; }
+.video-playback-center { flex: 1 1 0; min-width: 0; }
+.video-playback-rail-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3B3B3B;
+  border-radius: 8px;
+  background: var(--app-slate-900);
+  color: var(--app-slate-400);
+  cursor: pointer;
+}
+.video-playback-rail-left .video-playback-rail-toggle { right: 0; }
+.video-playback-rail-right .video-playback-rail-toggle { left: 0; }
+.video-playback-rail-toggle:hover { color: var(--app-slate-100); background: var(--app-slate-800); }
+@media (max-width: 767px) {
+  .video-playback-workspace { flex-wrap: wrap; }
+  .video-playback-center { flex-basis: 100%; order: 1; }
+  .video-playback-rail { min-height: 200px; }
+  .video-playback-workspace[data-left-collapsed="true"] .video-playback-rail-left,
+  .video-playback-workspace:is([data-right-collapsed="true"], [data-right-hidden="true"]) .video-playback-rail-right { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-playback-rail, .video-playback-rail-content { transition: none; }
+}
+
+/* Panels slide fully away; compact page-header buttons replace side handles. */
+.video-playback-workspace {
+  --video-left-width: 144px;
+  --video-right-width: 280px;
+  gap: 0;
+}
+.video-playback-workspace[data-left-collapsed="true"] { --video-left-width: 0px; }
+.video-playback-workspace[data-right-collapsed="true"] { --video-right-width: 0px; }
+.video-playback-rail-left .video-playback-rail-content { padding-right: 10px; box-sizing: border-box; }
+.video-playback-rail-right .video-playback-rail-content { padding-left: 10px; box-sizing: border-box; }
+@media (max-width: 767px) {
+  .video-playback-workspace[data-left-collapsed="true"] .video-playback-rail-left,
+  .video-playback-workspace:is([data-right-collapsed="true"], [data-right-hidden="true"]) .video-playback-rail-right { min-height: 0; }
+}
+
+/* Only elapsed playback is filled; buffered bytes do not affect the timeline. */
+.recording-playback-position { appearance: none; height: 4px; border-radius: 999px; display: block; margin: 8px 0; }
+.recording-playback-position::-webkit-slider-thumb { appearance: none; height: 10px; width: 10px; border-radius: 50%; background: white; }
+.recording-playback-position::-moz-range-thumb { height: 10px; width: 10px; border: 0; border-radius: 50%; background: white; }
+.recording-playback-position:focus-visible { outline: 2px solid #34d399; outline-offset: 5px; }
+
+/* Compact VMS workspace; counts remain recordings until logs are connected. */
+.video-vms .video-playback-workspace { --video-left-width: 168px; --video-right-width: 252px; min-height: clamp(520px, calc(100dvh - 180px), 820px); }
+.video-vms .video-playback-workspace[data-left-collapsed="true"] { --video-left-width: 0px; }
+.video-vms .video-playback-workspace[data-right-collapsed="true"] { --video-right-width: 0px; }
+.video-vms .video-playback-rail-left .video-playback-rail-content { width: 168px; }
+.video-vms .video-playback-rail-right .video-playback-rail-content { width: 252px; }
+.video-vms .video-playback-rail-content > section { overflow-y: auto; }
+.video-vms-calendar { height: 100%; display: flex; flex-direction: column; }
+.video-vms-calendar-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.video-vms-calendar-grid { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); grid-auto-rows: minmax(70px,1fr); gap: 5px; flex: 1; }
+.video-vms-day { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 10px; min-width: 0; }
+.video-vms-day-number { font-size: 13px; }
+.video-vms-recording-count { font-size: 10px; color: var(--app-slate-200); background: var(--app-slate-800); border-radius: 5px; padding: 4px 6px; max-width: 100%; }
+.video-vms-drone { width: 100%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 10px 8px; border-radius: 7px; color: var(--app-slate-200); cursor: pointer; border: 1px solid transparent; }
+.video-vms-drone:hover { background: var(--app-slate-800); }
+.video-vms-drone.is-selected { border-color: var(--app-slate-600); background: var(--app-slate-800); }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .video-vms .video-playback-workspace { --video-left-width: 140px; --video-right-width: 210px; }
+  .video-vms .video-playback-rail-left .video-playback-rail-content { width: 140px; }
+  .video-vms .video-playback-rail-right .video-playback-rail-content { width: 210px; }
+  .video-vms-day { padding: 6px; }
+  .video-vms-recording-count { font-size: 9px; padding: 3px; }
+}
+@media (max-width: 767px) {
+  .video-vms .video-playback-workspace { min-height: 0; }
+  .video-vms .video-playback-rail { flex-basis: 100%; min-height: 230px; }
+  .video-vms .video-playback-rail-content { width: 100% !important; padding: 0 !important; }
+  .video-vms .video-playback-center { margin: 10px 0; }
+  .video-vms .video-playback-rail-right { order: 2; }
+  .video-vms .video-playback-workspace[data-left-collapsed="true"] .video-playback-rail-left,
+  .video-vms .video-playback-workspace[data-right-collapsed="true"] .video-playback-rail-right { flex-basis: 0; min-height: 0; }
+  .video-vms-day { padding: 5px; }
+  .video-vms-recording-count { font-size: 8px; padding: 2px; }
+}
+
+/* Fill the remaining application viewport; close controls live inside rails. */
+.app-page-content[data-active-page="VIDEO_PLAYBACK"] { display: flex; flex-direction: column; }
+.app-page-content[data-active-page="VIDEO_PLAYBACK"] > * { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.video-vms { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.video-vms .video-playback-workspace { flex: 1; min-height: max(520px, calc(100dvh - 120px)); }
+.video-vms .video-playback-center { display: flex; flex-direction: column; }
+.video-vms .video-vms-calendar { flex: 1; }
+.video-vms-reopen { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.video-vms-reopen button { display: inline-flex; align-items: center; gap: 4px; }
+@media (max-width: 767px) { .video-vms .video-playback-workspace { min-height: 0; } }
+
+.video-vms-split { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.video-vms-split > button { align-self: flex-start; flex-shrink: 0; }
+.video-vms-split-panels { flex: 1; min-height: 0; }
+.video-vms-split-panels > section { display: flex; flex-direction: column; min-height: 0; }
+.video-vms-split-panels > section > .video-playback-title,
+.video-vms-split-panels > section > .p-3,
+.video-vms-split-panels > section > .p-4 { flex-shrink: 0; }
+.video-vms-split-panels .recording-player { flex: 1; min-height: 280px; }
+.video-vms-split-panels .recording-player > .relative { flex: 1; min-height: 0; }
+.video-vms-split-panels .recording-player video { position: absolute; width: 100%; height: 100%; inset: 0; aspect-ratio: auto; object-fit: contain; }
+.video-vms-split-panels > section > .aspect-video { flex: 1; aspect-ratio: auto; }
+@media (max-width: 1023px) { .video-vms-split-panels { gap: 10px; } .video-vms-split-panels .recording-player { min-height: 320px; } }
+
+.flight-year-body { padding: 16px; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.flight-year-months { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px 24px; flex: 1; align-content: space-between; }
+.flight-year-month { min-width: 0; }
+.flight-year-weekdays, .flight-year-days { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 4px; }
+.flight-year-weekdays { font-size: 8px; color: var(--app-slate-500); text-align: center; margin-bottom: 5px; }
+.flight-year-day { aspect-ratio: 1; width: 100%; max-height: 26px; border-radius: 3px; cursor: pointer; border: 1px solid transparent; transition: filter 160ms ease; }
+.flight-year-day:hover { filter: brightness(1.25); }
+.flight-year-day:focus-visible { outline: 2px solid var(--app-slate-100); outline-offset: 2px; }
+.flight-year-day.is-selected { outline: 2px solid var(--app-slate-200); outline-offset: 1px; }
+.flight-year-day.level-0, .flight-year-legend.level-0 { background: var(--app-slate-800); border-color: var(--app-slate-700); }
+.flight-year-day.level-1, .flight-year-legend.level-1 { background: #426b58; }
+.flight-year-day.level-2, .flight-year-legend.level-2 { background: #39865e; }
+.flight-year-day.level-3, .flight-year-legend.level-3 { background: #39b975; }
+:root[data-display-mode="light"] .flight-year-day.level-0, :root[data-display-mode="light"] .flight-year-legend.level-0 { background: #eeeeeb; border-color: #deded8; }
+:root[data-display-mode="light"] .flight-year-day.level-1, :root[data-display-mode="light"] .flight-year-legend.level-1 { background: #c5dfce; }
+:root[data-display-mode="light"] .flight-year-day.level-2, :root[data-display-mode="light"] .flight-year-legend.level-2 { background: #75b28d; }
+:root[data-display-mode="light"] .flight-year-day.level-3, :root[data-display-mode="light"] .flight-year-legend.level-3 { background: #276444; }
+.flight-year-legend { height: 10px; width: 10px; display: inline-block; border-radius: 2px; border: 1px solid transparent; }
+.flight-year-tooltip { position: fixed; z-index: 80; pointer-events: none; min-width: 200px; padding: 12px; border-radius: 9px; border: 1px solid var(--app-slate-700); background: var(--app-slate-900); color: var(--app-slate-200); box-shadow: 0 8px 28px #0003; font-size: 11px; }
+@media (max-width: 1100px) { .flight-year-months { gap: 16px 12px; } .flight-year-days { gap: 3px; } }
+@media (max-width: 500px) { .flight-year-months { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+/* Keep all twelve months in the year view; use equal square day cells. */
+.video-vms .flight-year-body { overflow: auto; }
+.video-vms .flight-year-months { flex: 0 0 auto; grid-template-columns: repeat(4,minmax(0,1fr)); align-content: start; gap: 16px 18px; }
+.video-vms .flight-year-day { height: auto; max-height: none; aspect-ratio: 1 / 1; padding: 0; min-width: 0; min-height: 0; }
+.video-vms .flight-year-month h4 { margin-bottom: 8px; }
+.video-vms .flight-year-days { grid-auto-rows: auto; }
+@media (max-width: 1100px) { .video-vms .flight-year-months { gap: 14px 10px; } .video-vms .flight-year-days, .video-vms .flight-year-weekdays { gap: 2px; } }
+@media (max-width: 767px) { .video-vms .flight-year-months { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 450px) { .video-vms .flight-year-months { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+/* Compact year overview without weekday headings. */
+.video-vms .flight-year-body { padding: 12px; }
+.video-vms .flight-year-months { gap: 10px 14px; }
+.video-vms .flight-year-month h4 { margin-bottom: 5px; font-size: 10px; }
+.video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,20px)); justify-content: center; gap: 3px; }
+.video-vms .flight-year-month { display: flex; flex-direction: column; }
+.video-vms .flight-year-month h4 { text-align: center; }
+@media (min-width: 768px) { .video-vms .flight-year-body { overflow: visible; } }
+@media (max-width: 1100px) { .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,16px)); gap: 2px; } }
+
+/* Spread the year across the panel and scale squares to available row height. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-body { container-type: size; min-height: 430px; }
+  .video-vms .flight-year-months { flex: 1; min-height: 0; grid-template-rows: repeat(3,minmax(0,1fr)); align-content: stretch; gap: 14px 18px; }
+  .video-vms .flight-year-month { min-height: 0; justify-content: center; align-items: stretch; }
+  .video-vms .flight-year-month h4 { margin-bottom: 8px; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,min(3.5cqh, calc((100% - 18px) / 7)))); gap: 3px; justify-content: center; }
+}
+
+.video-vms .flight-year-months { gap: 4px 6px; }
+@media (min-width: 768px) {
+  .video-vms .flight-year-month { justify-content: flex-start; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,min(3.9cqh, calc((100% - 18px) / 7)))); }
+}
+
+.video-vms .flight-year-months { gap: 1px; }
+/* Adjacent months share nearly continuous square grids. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-months { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; justify-content: stretch; }
+  .video-vms .flight-year-month { justify-content: flex-start; }
+  .video-vms .flight-year-month h4 { margin-bottom: 3px; }
+}
+@media (min-width: 768px) {
+  .video-vms .flight-year-months { grid-auto-flow: column; grid-template-rows: repeat(3,minmax(0,1fr)); }
+}
+
+.video-vms .flight-year-quarters { flex: 1; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 3px; align-content: start; min-height: 0; }
+.video-vms .flight-year-quarter { min-width: 0; }
+.video-vms .flight-year-quarter h4 { text-align: center; font-size: 10px; margin-bottom: 10px; }
+.video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); gap: 1px; }
+@media (max-width: 767px) { .video-vms .flight-year-quarters { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 3px; } }
+/* Use the panel height for quarter grids rather than leaving a bottom void. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-quarters { align-content: stretch; }
+  .video-vms .flight-year-quarter { display: flex; flex-direction: column; align-items: stretch; }
+  .video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); align-content: start; }
+  .video-vms .flight-year-quarter h4 { margin-bottom: 12px; }
+  .video-vms .flight-year-body { padding: 12px 8px; }
+}
+@media (min-width: 768px) {
+  .video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(6,minmax(0,1fr)); }
+  .video-vms .flight-year-quarters { flex: 0 0 auto; }
+  .video-vms .flight-year-footer { margin-top: 12px; }
+}
+/* Fit the longest quarter (92 days, fourteen rows) without clipping dates. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-body { container-type: size; overflow: visible; }
+  .video-vms .flight-year-quarters { flex: 1; min-height: 0; align-content: start; }
+  .video-vms .flight-year-quarter .flight-year-days {
+    grid-template-columns: repeat(7,minmax(0,min(calc((100% - 6px) / 7),calc((100cqh - 120px) / 14))));
+    gap: 1px; justify-content: center; align-content: start;
+  }
+}
+
+/* The calendar ends with its day grid; playback retains full-height panels. */
+.video-vms .video-playback-workspace[data-view="calendar"] { flex: 0 0 auto; min-height: 0; }
+.video-vms .video-playback-workspace[data-view="calendar"] .video-vms-calendar { flex: 0 0 auto; height: auto; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-body { container-type: normal; flex: 0 0 auto; min-height: 0; overflow: visible; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarters { flex: 0 0 auto; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); justify-content: stretch; }
+.video-vms .flight-year-day.is-selected {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.88);
+  filter: brightness(1.18);
+}
+:root[data-display-mode="light"] .video-vms .flight-year-day.is-selected {
+  box-shadow: inset 0 0 0 2px #244c37;
+  filter: none;
+}
+.video-vms .flight-year-day.is-selected:focus-visible {
+  outline: 2px solid var(--app-slate-100);
+  outline-offset: 1px;
+}
+/* Connected VMS panels with a single shared divider. */
+@media (min-width: 768px) {
+  .video-vms .video-playback-rail-left .video-playback-rail-content,
+  .video-vms .video-playback-rail-right .video-playback-rail-content { padding: 0; }
+  .video-vms .video-playback-workspace { gap: 0; }
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-playback-rail-left section { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-playback-center > section,
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-vms-split-panels > section:first-child { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 0; }
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-playback-rail-right section { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 0; }
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-playback-center > section,
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-vms-split-panels > section:last-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+}
+
+/* Only elapsed playback is filled; buffered bytes do not affect the timeline. */
+.recording-playback-position { appearance: none; height: 4px; border-radius: 999px; display: block; margin: 8px 0; }
+.recording-playback-position::-webkit-slider-thumb { appearance: none; height: 10px; width: 10px; border-radius: 50%; background: white; }
+.recording-playback-position::-moz-range-thumb { height: 10px; width: 10px; border: 0; border-radius: 50%; background: white; }
+.recording-playback-position:focus-visible { outline: 2px solid #34d399; outline-offset: 5px; }
+
+/* Compact VMS workspace; counts remain recordings until logs are connected. */
+.video-vms .video-playback-workspace { --video-left-width: 168px; --video-right-width: 252px; min-height: clamp(520px, calc(100dvh - 180px), 820px); }
+.video-vms .video-playback-workspace[data-left-collapsed="true"] { --video-left-width: 0px; }
+.video-vms .video-playback-workspace[data-right-collapsed="true"] { --video-right-width: 0px; }
+.video-vms .video-playback-rail-left .video-playback-rail-content { width: 168px; }
+.video-vms .video-playback-rail-right .video-playback-rail-content { width: 252px; }
+.video-vms .video-playback-rail-content > section { overflow-y: auto; }
+.video-vms-calendar { height: 100%; display: flex; flex-direction: column; }
+.video-vms-calendar-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.video-vms-calendar-grid { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); grid-auto-rows: minmax(70px,1fr); gap: 5px; flex: 1; }
+.video-vms-day { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 10px; min-width: 0; }
+.video-vms-day-number { font-size: 13px; }
+.video-vms-recording-count { font-size: 10px; color: var(--app-slate-200); background: var(--app-slate-800); border-radius: 5px; padding: 4px 6px; max-width: 100%; }
+.video-vms-drone { width: 100%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 10px 8px; border-radius: 7px; color: var(--app-slate-200); cursor: pointer; border: 1px solid transparent; }
+.video-vms-drone:hover { background: var(--app-slate-800); }
+.video-vms-drone.is-selected { border-color: var(--app-slate-600); background: var(--app-slate-800); }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .video-vms .video-playback-workspace { --video-left-width: 140px; --video-right-width: 210px; }
+  .video-vms .video-playback-rail-left .video-playback-rail-content { width: 140px; }
+  .video-vms .video-playback-rail-right .video-playback-rail-content { width: 210px; }
+  .video-vms-day { padding: 6px; }
+  .video-vms-recording-count { font-size: 9px; padding: 3px; }
+}
+@media (max-width: 767px) {
+  .video-vms .video-playback-workspace { min-height: 0; }
+  .video-vms .video-playback-rail { flex-basis: 100%; min-height: 230px; }
+  .video-vms .video-playback-rail-content { width: 100% !important; padding: 0 !important; }
+  .video-vms .video-playback-center { margin: 10px 0; }
+  .video-vms .video-playback-rail-right { order: 2; }
+  .video-vms .video-playback-workspace[data-left-collapsed="true"] .video-playback-rail-left,
+  .video-vms .video-playback-workspace[data-right-collapsed="true"] .video-playback-rail-right { flex-basis: 0; min-height: 0; }
+  .video-vms-day { padding: 5px; }
+  .video-vms-recording-count { font-size: 8px; padding: 2px; }
+}
+
+/* Fill the remaining application viewport; close controls live inside rails. */
+.app-page-content[data-active-page="VIDEO_PLAYBACK"] { display: flex; flex-direction: column; }
+.app-page-content[data-active-page="VIDEO_PLAYBACK"] > * { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.video-vms { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.video-vms .video-playback-workspace { flex: 1; min-height: max(520px, calc(100dvh - 120px)); }
+.video-vms .video-playback-center { display: flex; flex-direction: column; }
+.video-vms .video-vms-calendar { flex: 1; }
+.video-vms-reopen { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.video-vms-reopen button { display: inline-flex; align-items: center; gap: 4px; }
+@media (max-width: 767px) { .video-vms .video-playback-workspace { min-height: 0; } }
+
+.video-vms-split { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.video-vms-split > button { align-self: flex-start; flex-shrink: 0; }
+.video-vms-split-panels { flex: 1; min-height: 0; }
+.video-vms-split-panels > section { display: flex; flex-direction: column; min-height: 0; }
+.video-vms-split-panels > section > .video-playback-title,
+.video-vms-split-panels > section > .p-3,
+.video-vms-split-panels > section > .p-4 { flex-shrink: 0; }
+.video-vms-split-panels .recording-player { flex: 1; min-height: 280px; }
+.video-vms-split-panels .recording-player > .relative { flex: 1; min-height: 0; }
+.video-vms-split-panels .recording-player video { position: absolute; width: 100%; height: 100%; inset: 0; aspect-ratio: auto; object-fit: contain; }
+.video-vms-split-panels > section > .aspect-video { flex: 1; aspect-ratio: auto; }
+@media (max-width: 1023px) { .video-vms-split-panels { gap: 10px; } .video-vms-split-panels .recording-player { min-height: 320px; } }
+
+.flight-year-body { padding: 16px; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.flight-year-months { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px 24px; flex: 1; align-content: space-between; }
+.flight-year-month { min-width: 0; }
+.flight-year-weekdays, .flight-year-days { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 4px; }
+.flight-year-weekdays { font-size: 8px; color: var(--app-slate-500); text-align: center; margin-bottom: 5px; }
+.flight-year-day { aspect-ratio: 1; width: 100%; max-height: 26px; border-radius: 3px; cursor: pointer; border: 1px solid transparent; transition: filter 160ms ease; }
+.flight-year-day:hover { filter: brightness(1.25); }
+.flight-year-day:focus-visible { outline: 2px solid var(--app-slate-100); outline-offset: 2px; }
+.flight-year-day.is-selected { outline: 2px solid var(--app-slate-200); outline-offset: 1px; }
+.flight-year-day.level-0, .flight-year-legend.level-0 { background: var(--app-slate-800); border-color: var(--app-slate-700); }
+.flight-year-day.level-1, .flight-year-legend.level-1 { background: #426b58; }
+.flight-year-day.level-2, .flight-year-legend.level-2 { background: #39865e; }
+.flight-year-day.level-3, .flight-year-legend.level-3 { background: #39b975; }
+:root[data-display-mode="light"] .flight-year-day.level-0, :root[data-display-mode="light"] .flight-year-legend.level-0 { background: #eeeeeb; border-color: #deded8; }
+:root[data-display-mode="light"] .flight-year-day.level-1, :root[data-display-mode="light"] .flight-year-legend.level-1 { background: #c5dfce; }
+:root[data-display-mode="light"] .flight-year-day.level-2, :root[data-display-mode="light"] .flight-year-legend.level-2 { background: #75b28d; }
+:root[data-display-mode="light"] .flight-year-day.level-3, :root[data-display-mode="light"] .flight-year-legend.level-3 { background: #276444; }
+.flight-year-legend { height: 10px; width: 10px; display: inline-block; border-radius: 2px; border: 1px solid transparent; }
+.flight-year-tooltip { position: fixed; z-index: 80; pointer-events: none; min-width: 200px; padding: 12px; border-radius: 9px; border: 1px solid var(--app-slate-700); background: var(--app-slate-900); color: var(--app-slate-200); box-shadow: 0 8px 28px #0003; font-size: 11px; }
+@media (max-width: 1100px) { .flight-year-months { gap: 16px 12px; } .flight-year-days { gap: 3px; } }
+@media (max-width: 500px) { .flight-year-months { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+/* Keep all twelve months in the year view; use equal square day cells. */
+.video-vms .flight-year-body { overflow: auto; }
+.video-vms .flight-year-months { flex: 0 0 auto; grid-template-columns: repeat(4,minmax(0,1fr)); align-content: start; gap: 16px 18px; }
+.video-vms .flight-year-day { height: auto; max-height: none; aspect-ratio: 1 / 1; padding: 0; min-width: 0; min-height: 0; }
+.video-vms .flight-year-month h4 { margin-bottom: 8px; }
+.video-vms .flight-year-days { grid-auto-rows: auto; }
+@media (max-width: 1100px) { .video-vms .flight-year-months { gap: 14px 10px; } .video-vms .flight-year-days, .video-vms .flight-year-weekdays { gap: 2px; } }
+@media (max-width: 767px) { .video-vms .flight-year-months { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 450px) { .video-vms .flight-year-months { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+
+/* Compact year overview without weekday headings. */
+.video-vms .flight-year-body { padding: 12px; }
+.video-vms .flight-year-months { gap: 10px 14px; }
+.video-vms .flight-year-month h4 { margin-bottom: 5px; font-size: 10px; }
+.video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,20px)); justify-content: center; gap: 3px; }
+.video-vms .flight-year-month { display: flex; flex-direction: column; }
+.video-vms .flight-year-month h4 { text-align: center; }
+@media (min-width: 768px) { .video-vms .flight-year-body { overflow: visible; } }
+@media (max-width: 1100px) { .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,16px)); gap: 2px; } }
+
+/* Spread the year across the panel and scale squares to available row height. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-body { container-type: size; min-height: 430px; }
+  .video-vms .flight-year-months { flex: 1; min-height: 0; grid-template-rows: repeat(3,minmax(0,1fr)); align-content: stretch; gap: 14px 18px; }
+  .video-vms .flight-year-month { min-height: 0; justify-content: center; align-items: stretch; }
+  .video-vms .flight-year-month h4 { margin-bottom: 8px; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,min(3.5cqh, calc((100% - 18px) / 7)))); gap: 3px; justify-content: center; }
+}
+
+.video-vms .flight-year-months { gap: 4px 6px; }
+@media (min-width: 768px) {
+  .video-vms .flight-year-month { justify-content: flex-start; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7,minmax(0,min(3.9cqh, calc((100% - 18px) / 7)))); }
+}
+
+.video-vms .flight-year-months { gap: 1px; }
+/* Adjacent months share nearly continuous square grids. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-months { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; }
+  .video-vms .flight-year-days { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; justify-content: stretch; }
+  .video-vms .flight-year-month { justify-content: flex-start; }
+  .video-vms .flight-year-month h4 { margin-bottom: 3px; }
+}
+@media (min-width: 768px) {
+  .video-vms .flight-year-months { grid-auto-flow: column; grid-template-rows: repeat(3,minmax(0,1fr)); }
+}
+
+.video-vms .flight-year-quarters { flex: 1; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 3px; align-content: start; min-height: 0; }
+.video-vms .flight-year-quarter { min-width: 0; }
+.video-vms .flight-year-quarter h4 { text-align: center; font-size: 10px; margin-bottom: 10px; }
+.video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); gap: 1px; }
+@media (max-width: 767px) { .video-vms .flight-year-quarters { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 3px; } }
+/* Use the panel height for quarter grids rather than leaving a bottom void. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-quarters { align-content: stretch; }
+  .video-vms .flight-year-quarter { display: flex; flex-direction: column; align-items: stretch; }
+  .video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); align-content: start; }
+  .video-vms .flight-year-quarter h4 { margin-bottom: 12px; }
+  .video-vms .flight-year-body { padding: 12px 8px; }
+}
+@media (min-width: 768px) {
+  .video-vms .flight-year-quarter .flight-year-days { grid-template-columns: repeat(6,minmax(0,1fr)); }
+  .video-vms .flight-year-quarters { flex: 0 0 auto; }
+  .video-vms .flight-year-footer { margin-top: 12px; }
+}
+/* Fit the longest quarter (92 days, fourteen rows) without clipping dates. */
+@media (min-width: 768px) {
+  .video-vms .flight-year-body { container-type: size; overflow: visible; }
+  .video-vms .flight-year-quarters { flex: 1; min-height: 0; align-content: start; }
+  .video-vms .flight-year-quarter .flight-year-days {
+    grid-template-columns: repeat(7,minmax(0,min(calc((100% - 6px) / 7),calc((100cqh - 120px) / 14))));
+    gap: 1px; justify-content: center; align-content: start;
+  }
+}
+
+/* The calendar ends with its day grid; playback retains full-height panels. */
+.video-vms .video-playback-workspace[data-view="calendar"] { flex: 0 0 auto; min-height: 0; }
+.video-vms .video-playback-workspace[data-view="calendar"] .video-vms-calendar { flex: 0 0 auto; height: auto; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-body { container-type: normal; flex: 0 0 auto; min-height: 0; overflow: visible; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarters { flex: 0 0 auto; }
+.video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter .flight-year-days { grid-template-columns: repeat(7,minmax(0,1fr)); justify-content: stretch; }
+.video-vms .flight-year-day.is-selected {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.88);
+  filter: brightness(1.18);
+}
+:root[data-display-mode="light"] .video-vms .flight-year-day.is-selected {
+  box-shadow: inset 0 0 0 2px #244c37;
+  filter: none;
+}
+.video-vms .flight-year-day.is-selected:focus-visible {
+  outline: 2px solid var(--app-slate-100);
+  outline-offset: 1px;
+}
+/* Connected VMS panels with a single shared divider. */
+@media (min-width: 768px) {
+  .video-vms .video-playback-rail-left .video-playback-rail-content,
+  .video-vms .video-playback-rail-right .video-playback-rail-content { padding: 0; }
+  .video-vms .video-playback-workspace { gap: 0; }
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-playback-rail-left section { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-playback-center > section,
+  .video-vms .video-playback-workspace[data-left-collapsed="false"] .video-vms-split-panels > section:first-child { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 0; }
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-playback-rail-right section { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 0; }
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-playback-center > section,
+  .video-vms .video-playback-workspace[data-right-collapsed="false"] .video-vms-split-panels > section:last-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+}
+.video-flight-route .flight-replay-embedded { border-radius: 0; }
+.video-flight-route .flight-panel-title { display: none; }
+.video-flight-route .flight-detail-panel { border: 0; border-radius: 0; }
+.video-flight-route { height: 100%; }
+:root:not([data-display-mode="light"]) .video-vms .flight-year-day.level-0,
+:root:not([data-display-mode="light"]) .video-vms .flight-year-legend.level-0 {
+  background: #191919;
+  border-color: #242424;
+}
+:root:not([data-display-mode="light"]) .video-vms .flight-year-day.level-0,
+:root:not([data-display-mode="light"]) .video-vms .flight-year-legend.level-0 {
+  background: #222222;
+  border-color: #2a2a2a;
+}
+
+.flight-panel-resizer { flex: 0 0 8px; display: flex; align-items: center; justify-content: center; background: var(--app-slate-900); cursor: col-resize; touch-action: none; user-select: none; z-index: 35; }
+.flight-panel-resizer span { width: 2px; height: 36px; border-radius: 2px; background: var(--app-slate-600); transition: background 150ms ease; }
+.flight-panel-resizer:hover span, .flight-panel-resizer:focus-visible span { background: #38bdf8; }
+.flight-panel-resizer:focus-visible { outline: 1px solid #38bdf8; outline-offset: -1px; }
+
+.video-vms-adjustable { display: flex; gap: 0; }
+.video-vms-adjustable > section:first-child { flex: 0 0 calc((100% - 8px) * var(--recording-ratio, .5)); }
+.video-vms-adjustable > section:last-child { flex: 1 1 0; min-width: 0; }
+@media (max-width: 767px) {
+  .video-vms-adjustable { flex-direction: column; gap: 10px; }
+  .video-vms-adjustable > section:first-child { flex: 1 1 auto; }
+  .video-recording-resizer { display: none; }
+}
+
+.flight-telemetry-right > .flight-detail-panel { order: 0; }
+.flight-telemetry-right > .flight-telemetry-resizer { order: 1; }
+.flight-telemetry-right > .flight-telemetry-slide { order: 2; }
+.flight-telemetry-right:has(.flight-telemetry-resizer) > .flight-detail-panel { border-left: 1px solid var(--app-slate-800); border-right: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.flight-telemetry-right .flight-telemetry-slide { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+.video-vms-adjustable > section:first-child { flex-basis: calc((100% - var(--telemetry-width, 0px) - var(--split-dividers, 8px)) * var(--recording-ratio, .5)); }
+.video-vms-adjustable > .video-route-panel { flex: 1 1 0; min-width: 0; }
+.video-separate-telemetry { flex: 0 0 var(--telemetry-width, 0px); min-width: 0; overflow: hidden; }
+@media (max-width: 767px) { .video-vms-adjustable > section:first-child, .video-separate-telemetry { flex: 1 1 auto; } }
+
+.flight-year-month-divider { grid-column: 1 / -1; height: 1px; background: var(--app-slate-500); opacity: .22; margin: 1px 0; }
+
+.video-vms .flight-year-day.month-start { border-left: 1px solid rgba(180,180,180,.25); }
+
+.video-vms .flight-year-day.month-edge-top { border-top: 1px solid rgba(190,190,190,.48); }
+.video-vms .flight-year-day.month-edge-bottom { border-bottom: 1px solid rgba(190,190,190,.48); }
+.video-vms .flight-year-day.month-edge-left { border-left: 1px solid rgba(190,190,190,.48); }
+.video-vms .flight-year-day.month-edge-top { border-top-color: rgba(195,195,195,.6) !important; }
+.video-vms .flight-year-day.month-edge-bottom { border-bottom-color: rgba(195,195,195,.6) !important; }
+.video-vms .flight-year-day.month-edge-left { border-left-color: rgba(195,195,195,.6) !important; }
+
+.flight-month-outline-grid { position: relative; }
+.flight-month-outlines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: rgba(195,195,195,.55); z-index: 2; }
+
+.video-vms .flight-year-quarters { column-gap: 0; }
+.video-vms .flight-year-quarter .flight-month-outline-grid { border-right: 1px solid rgba(195,195,195,.55); }
+.video-vms .flight-year-quarter:first-child .flight-month-outline-grid { border-left: 1px solid rgba(195,195,195,.55); }
+@media (max-width: 767px) { .video-vms .flight-year-quarter:nth-child(3) .flight-month-outline-grid { border-left: 1px solid rgba(195,195,195,.55); } }
+
+.flight-month-labels { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.flight-month-labels span { position: absolute; left: 50%; transform: translate(-50%,-50%); font-size: 12px; letter-spacing: 2px; font-weight: 500; color: rgba(220,220,220,.22); }
+:root[data-display-mode="light"] .flight-month-labels span { color: rgba(30,45,35,.24); }
+
+/* Fill the available application viewport, including browser full-screen mode. */
+@media (min-width: 768px) {
+  .app-page-content[data-active-page="VIDEO_PLAYBACK"] { display: flex; flex-direction: column; }
+  .app-page-content[data-active-page="VIDEO_PLAYBACK"] > div { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] { flex: 1; min-height: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .video-vms-calendar { flex: 1; height: 100%; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-body { container-type: size; flex: 1; min-height: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarters { flex: 1; min-height: 0; grid-template-rows: minmax(0,1fr); align-content: stretch; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter .flight-year-days {
+    grid-template-columns: repeat(7,minmax(0,min(calc((100% - 6px) / 7),calc((100cqh - 104px) / 14))));
+    justify-content: center;
+  }
+}
+
+/* Stretch the landing calendar to the footer without changing day order. */
+@media (min-width: 768px) {
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter { display: flex; flex-direction: column; min-height: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter h4 { flex-shrink: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter .flight-year-days {
+    flex: 1; min-height: 0; grid-template-columns: repeat(7,minmax(0,1fr)); grid-auto-rows: minmax(0,1fr); align-content: stretch; justify-content: stretch;
+  }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-day { aspect-ratio: auto; height: 100%; max-height: none; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-body > :first-child,
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-footer { flex-shrink: 0; }
+}
+
+/* Both cameras share the recording panel vertically and follow route time. */
+.recording-dual-cameras { display: grid; grid-template-rows: repeat(2,minmax(0,1fr)); flex: 1; min-height: 0; background: black; }
+.recording-dual-camera { display: flex; flex-direction: column; position: relative; min-height: 0; overflow: hidden; }
+.recording-dual-camera + .recording-dual-camera { border-top: 1px solid var(--app-slate-700); }
+.video-vms-split-panels .recording-dual-camera .recording-player { min-height: 0; }
+.recording-camera-label { position: absolute; left: 10px; top: 8px; z-index: 1; background: #0008; border-radius: 4px; padding: 3px 6px; color: white; font-size: 10px; pointer-events: none; }
+
+/* Keep chart contents mounted while the telemetry rail slides in and out. */
+.video-vms-adjustable .video-separate-telemetry { display: flex; transition: flex-basis 350ms cubic-bezier(.22,1,.36,1), opacity 250ms ease; opacity: 0; }
+.video-vms-adjustable[data-telemetry-open="true"] .video-separate-telemetry { opacity: 1; }
+.video-vms-adjustable .video-telemetry-divider { flex: 0 0 0px; width: 0; min-width: 0; padding: 0; overflow: hidden; transition: flex-basis 350ms cubic-bezier(.22,1,.36,1); }
+.video-vms-adjustable[data-telemetry-open="true"] .video-telemetry-divider { flex-basis: 8px; }
+.video-vms-adjustable > section:first-child { transition: flex-basis 350ms cubic-bezier(.22,1,.36,1); }
+.video-vms-adjustable:has(.video-recording-resizer:active) > section:first-child,
+.video-vms-adjustable[data-telemetry-resizing="true"] > section:first-child,
+.video-vms-adjustable[data-telemetry-resizing="true"] .video-separate-telemetry { transition: none; }
+@media (prefers-reduced-motion: reduce) { .video-vms-adjustable > section:first-child, .video-vms-adjustable .video-separate-telemetry, .video-vms-adjustable .video-telemetry-divider { transition: none; } }
+@media (max-width: 767px) { .video-vms-adjustable[data-telemetry-open="false"] .video-separate-telemetry { display: none; } .video-vms-adjustable .video-separate-telemetry > div { width: 100% !important; min-width: 0 !important; } }
+
+:root[data-ui-density="compact"] .app-page-content { padding: 8px; }
+/* Match the IN/OUT spreadsheet font in incident previews and printouts. */
+#printable-incident-sheet,
+#printable-incident-sheet * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Incident and confiscation sheets follow the IN/OUT spreadsheet typography. */
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet),
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) * {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) :is(th, .font-bold, strong) {
+  font-weight: 700;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) th {
+  font-size: 10px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .official-report-title,
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .official-report-title h1 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .official-report-title p {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .official-sr-value {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Match the IN/OUT sheet's thin black rules. */
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) {
+  --official-rule: #000;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) :is(table, th, td, [class*="border-"]) {
+  border-color: #000;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .border-2 {
+  border-width: 1px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .border-t-2 {
+  border-top-width: 1px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .border-b-2 {
+  border-bottom-width: 1px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .border-l-2 {
+  border-left-width: 1px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) .border-r-2 {
+  border-right-width: 1px;
+}
+:is(#printable-incident-sheet, #printable-confiscated-sheet, #printable-correspondence-sheet) [class*="divide-"] > :not(:last-child) {
+  border-color: #000;
+}
+
+/* Task calendar priority colors stay distinct across display themes. */
+:root [data-task-priority="High"] {
+  background-color: #dc2626 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+:root [data-task-priority="Medium"] {
+  background-color: #f59e0b !important;
+  border-color: #fbbf24 !important;
+  color: #1f2937 !important;
+}
+:root [data-task-priority="Low"] {
+  background-color: #16a34a !important;
+  border-color: #22c55e !important;
+  color: #ffffff !important;
+}
+
+:root .task-priority-legend[data-priority="High"] { color: #ef4444 !important; }
+:root .task-priority-legend[data-priority="Medium"] { color: #f59e0b !important; }
+:root .task-priority-legend[data-priority="Low"] { color: #22c55e !important; }
+
+:root [data-task-priority="Completed"] {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #111827 !important;
+}
+:root [data-task-completed="true"] {
+  border-color: #ffffff !important;
+}
+
+:root [data-task-completed="true"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+:root [data-task-completed="true"] :is(h5, p) {
+  color: #374151 !important;
+}
+
+
+/* Map chrome follows the application palette; raster paint is themed separately
+   so flight markers, cluster colors and heatmap density retain their meaning. */
+.flight-location-map .maplibregl-ctrl-group,
+.flight-location-map .maplibregl-ctrl-attrib {
+  background: var(--app-slate-950);
+  color: var(--app-slate-200);
+}
+.flight-location-map .maplibregl-ctrl-group button + button {
+  border-top-color: var(--app-slate-700);
+}
+:root:not([data-display-mode="light"]) .flight-location-map .maplibregl-ctrl-icon {
+  filter: invert(1);
+}
+.flight-location-map .maplibregl-ctrl-attrib a { color: inherit; }
+
+/* Embedded TaskOrbit workspace uses the host palette and scoped drag styles. */
+.task-orbit-workspace { font-family: inherit; }
+.task-orbit-workspace .dragging-card { opacity: .25; transform: scale(.98); }
+.task-orbit-workspace .drag-over-column { background-color: color-mix(in srgb, var(--app-accent-500) 8%, transparent); outline: 2px dashed var(--app-accent-500); }
+.task-orbit-workspace .drop-indicator-line { height: 2px; background: var(--app-accent-500); border-radius: 2px; margin: 6px 0; }
+:root:not([data-display-mode="light"]) .task-orbit-workspace { --color-white: #fff; }
+
+/* Fit map analytics to the desktop content viewport; keep natural scrolling on phones. */
+@media (min-width: 1024px) and (min-height: 650px) {
+  .flight-location-details { height: var(--flight-details-height); min-height: 0; }
+  .flight-location-details > aside { flex-shrink: 0; }
+  .flight-location-details > aside > div:first-child { height: 38px; }
+  .flight-location-details > aside > div:last-child { padding: 10px; }
+  .flight-location-details > aside .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px; }
+  .flight-location-details > aside .grid-cols-2 { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 8px; }
+  .flight-location-details > aside .grid-cols-2 > div { padding: 10px; }
+  .flight-location-details > aside .grid-cols-1 { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+  .flight-location-details > aside section > h3 { height: 34px; padding-inline: 10px; font-size: 11px; }
+  .flight-location-details > aside section > div { padding: 8px; }
+  .flight-location-details > aside svg { height: clamp(70px,15vh,150px); margin-bottom: 6px; }
+  .flight-location-details > aside ul { font-size: 10px; gap: 4px 10px; }
+  .flight-location-details > section { min-height: 0; }
+  .flight-location-details > section > h3 { padding-block: 10px; }
+  .flight-location-details > section > div { overflow-y: hidden; }
+  .flight-location-details > section > div > .flex-1,
+  .flight-location-details > section > div > .flex-1 > div > div { min-height: 0; }
+}
+
+/* Main pages fill the content window. Only their own viewport conceals its
+   scrollbar; modal/dialog scroll containers retain their existing behavior. */
+.app-page-viewport { scrollbar-width: none; }
+.app-page-viewport::-webkit-scrollbar { display: none; }
+@media print {
+  .app-page-content, .app-page-viewport { height: auto !important; overflow: visible !important; }
+}
+
+/* Shared semantic colors for the map analytics page. */
+:root:not([data-display-mode="light"]) .flight-location-page {
+  --app-slate-950: #141414;
+  --app-slate-900: #181818;
+  --app-slate-800: #303030;
+  --app-slate-700: #303030;
+  --app-slate-400: #9ca3af;
+  --app-slate-300: #d1d5db;
+  --app-slate-100: #e5e7eb;
+}
+:root:not([data-display-mode="light"]) .flight-location-page :is(section > h3, aside > div:first-child) {
+  background-color: #202020;
+}
+.flight-location-page .summary-metric { border-top: 2px solid #64748b; }
+.flight-location-page .summary-metric[data-metric="ASSET LOGS"] { border-top-color: #22c55e; }
+.flight-location-page .summary-metric[data-metric="CONFISCATED LOGS"] { border-top-color: #ef4444; }
+.flight-location-page .summary-metric[data-metric="TOTAL LOGS"] { border-top-color: #2563eb; }
+.flight-location-page .summary-metric[data-metric="LOGGED HOURS"],
+.flight-location-page .summary-metric[data-metric="LOGGED DISTANCE"] { border-top-color: #38bdf8; }
+
+/* A detached page is the same authorized app in its own browser window. */
+.detached-window #root{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+.detached-window #root>.h-dvh{height:auto;flex:1;min-height:0}
+.detached-window:not(.screen-navigation-visible) .app-sidebar,.detached-window:not(.screen-navigation-visible) .app-topbar{display:none!important}
+.detached-window .app-page-content{padding:12px!important}
+
+/* Tablet flight calendar: retain square dates instead of stretching to screen height. */
+@media (max-width: 1023px), (max-width: 1366px) and (pointer: coarse) {
+  .app-page-content[data-active-page="VIDEO_PLAYBACK"] { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .video-vms { flex: 0 0 auto; min-height: 100%; }
+  .video-vms .video-playback-workspace[data-view="calendar"] { flex: 0 0 auto; min-height: 0; align-items: stretch; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .video-vms-calendar { flex: 0 0 auto; height: auto; min-height: 0; container-type: inline-size; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-body { container-type: normal; flex: 0 0 auto; min-height: 0; padding: 16px; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarters { flex: 0 0 auto; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto; align-content: start; gap: 24px 16px; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter { display: block; min-height: 0; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarter .flight-year-days { flex: none; height: auto; grid-template-columns: repeat(7,minmax(0,1fr)); grid-template-rows: none; grid-auto-rows: auto; align-content: start; gap: 2px; }
+  .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-day { aspect-ratio: 1; width: 100%; height: auto; min-height: 0; max-height: none; touch-action: manipulation; }
+  .video-vms .flight-year-quarter h4 { font-size: 13px; margin-bottom: 12px; }
+  .video-vms .flight-month-labels span { color: var(--app-slate-300); opacity: .65; font-size: 13px; letter-spacing: 1px; }
+  .video-vms .flight-year-footer { font-size: 12px; line-height: 1.6; }
+  .video-vms .video-playback-title { height: auto; min-height: 52px; }
+  .video-vms .video-playback-title button,
+  .video-vms .flight-year-body > :first-child button,
+  .video-vms .video-vms-drone { min-width: 44px; min-height: 44px; }
+  .video-vms .video-playback-title h3,
+  .video-vms .video-playback-rail-content { font-size: 13px; }
+  .video-vms .video-playback-rail-content button { min-height: 44px; }
+  .video-vms .video-playback-rail-content input { min-height: 44px; font-size: 14px; }
+  .video-vms .video-vms-split-panels { min-height: 400px; }
+  .video-vms .flight-year-day.level-0 { background: var(--app-slate-800); }
+  @container (min-width: 920px) {
+    .video-vms .video-playback-workspace[data-view="calendar"] .flight-year-quarters { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  }
+}

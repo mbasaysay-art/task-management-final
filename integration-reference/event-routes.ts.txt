@@ -1,0 +1,10 @@
+// server.ts:186
+initializeEvents(store);
+// server.ts:1047
+app.get('/api/events/participants',requireAuth,(req,res)=>{res.setHeader('Cache-Control','no-store');res.json(eventParticipantDirectory(fleetState,(req as any).user));});
+// server.ts:1073
+app.get('/api/events',requireAuth,(req,res)=>{res.setHeader('Cache-Control','no-store');res.json({events:taskWorkspaceStorage.shared!.legacyEvents((req as any).user)});});
+// server.ts:1074
+app.post('/api/events',requireCsrfToken,requireAuth,(req,res)=>{const actor=(req as any).user;const event=taskWorkspaceStorage.shared!.saveLegacyEvent(actor,req.body);fleetState=store.load() as FleetDataState;broadcastEntityUpdate('notifications',fleetState.notifications);broadcastEntityUpdate('auditLogs',fleetState.auditLogs);res.json({event});});
+// server.ts:1075
+app.post('/api/events/:id/cancel',requireCsrfToken,requireAuth,(req,res)=>{const actor=(req as any).user;const event=taskWorkspaceStorage.shared!.saveLegacyEvent(actor,{id:String(req.params.id),version:req.body.version},true);fleetState=store.load() as FleetDataState;broadcastEntityUpdate('notifications',fleetState.notifications);broadcastEntityUpdate('auditLogs',fleetState.auditLogs);res.json({event});});
